@@ -9,5 +9,6 @@
  * @author doquangminh
  */
 public class NewClass {
-    
+    //This is an comment
+    //You need to delete the class after reading this comment
 }
