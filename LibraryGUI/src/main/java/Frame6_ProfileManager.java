@@ -57,6 +57,7 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
         jLabel2.setText("Name:");
 
+        jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
         jTextField1.setText("Do Quang Minh");
         jTextField1.setBorder(null);
@@ -126,6 +127,7 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
 
         jLabel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jTextField4.setEditable(false);
         jTextField4.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
         jTextField4.setText("abc.123@gmail.com");
         jTextField4.setBorder(null);
@@ -135,6 +137,7 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
             }
         });
 
+        jTextField5.setEditable(false);
         jTextField5.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
         jTextField5.setText("0909000111");
         jTextField5.setBorder(null);

@@ -113,7 +113,7 @@ public class Frame14_Book_Student extends javax.swing.JFrame {
         });
 
         btnBack.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
-        btnBack.setIcon(new javax.swing.ImageIcon("/Users/doquangminh/NetBeansProjects/LibraryGUI/src/main/java/com/mycompany/librarygui/Library_Icons/icons8-back_1.png")); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\Library-Management-Official-\\LibraryGUI\\src\\main\\java\\com\\mycompany\\librarygui\\Library_Icons\\icons8-back_1.png")); // NOI18N
         btnBack.setBorderPainted(false);
         btnBack.setContentAreaFilled(false);
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -148,7 +148,7 @@ public class Frame14_Book_Student extends javax.swing.JFrame {
 
         btnSearch.setFont(new java.awt.Font("Avenir Next", 1, 10)); // NOI18N
         btnSearch.setForeground(new java.awt.Color(153, 153, 153));
-        btnSearch.setIcon(new javax.swing.ImageIcon("/Users/doquangminh/NetBeansProjects/LibraryGUI/src/main/java/com/mycompany/librarygui/Library_Icons/icons8-search_1.png")); // NOI18N
+        btnSearch.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\Library-Management-Official-\\LibraryGUI\\src\\main\\java\\com\\mycompany\\librarygui\\Library_Icons\\icons8-search_1.png")); // NOI18N
         btnSearch.setBorder(null);
         btnSearch.setBorderPainted(false);
         btnSearch.setContentAreaFilled(false);
@@ -160,8 +160,12 @@ public class Frame14_Book_Student extends javax.swing.JFrame {
                 btnSearchMouseExited(evt);
             }
         });
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
 
-        jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTable1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -357,6 +361,10 @@ public class Frame14_Book_Student extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSearchActionPerformed
 
     /**
      * @param args the command line arguments

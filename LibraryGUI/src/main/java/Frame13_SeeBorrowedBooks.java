@@ -65,7 +65,7 @@ public class Frame13_SeeBorrowedBooks extends javax.swing.JFrame {
 
         btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
-        btnBack.setIcon(new javax.swing.ImageIcon("/Users/doquangminh/NetBeansProjects/LibraryGUI/src/main/java/com/mycompany/librarygui/Library_Icons/icons8-back_1.png")); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\Library-Management-Official-\\LibraryGUI\\src\\main\\java\\com\\mycompany\\librarygui\\Library_Icons\\icons8-back_1.png")); // NOI18N
         btnBack.setBorderPainted(false);
         btnBack.setContentAreaFilled(false);
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -82,7 +82,6 @@ public class Frame13_SeeBorrowedBooks extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTable1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

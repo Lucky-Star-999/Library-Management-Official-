@@ -61,6 +61,7 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 113, 164));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setEnabled(false);
 
         jLabel1.setFont(new java.awt.Font("Avenir Next", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -83,7 +84,7 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
 
         btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
-        btnBack.setIcon(new javax.swing.ImageIcon("/Users/doquangminh/NetBeansProjects/LibraryGUI/src/main/java/com/mycompany/librarygui/Library_Icons/icons8-back_1.png")); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\Library-Management-Official-\\LibraryGUI\\src\\main\\java\\com\\mycompany\\librarygui\\Library_Icons\\icons8-back_1.png")); // NOI18N
         btnBack.setBorderPainted(false);
         btnBack.setContentAreaFilled(false);
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -100,7 +101,6 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTable1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -155,9 +155,9 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(btnBack))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)

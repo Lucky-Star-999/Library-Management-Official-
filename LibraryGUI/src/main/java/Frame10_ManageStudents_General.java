@@ -89,7 +89,6 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
             }
         });
 
-        btnManage.setBackground(new java.awt.Color(255, 255, 255));
         btnManage.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
         btnManage.setText("Detail");
         btnManage.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -101,9 +100,7 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
-        btnBack.setIcon(new javax.swing.ImageIcon("/Users/doquangminh/NetBeansProjects/LibraryGUI/src/main/java/com/mycompany/librarygui/Library_Icons/icons8-back_1.png")); // NOI18N
         btnBack.setBorderPainted(false);
         btnBack.setContentAreaFilled(false);
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -120,7 +117,6 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
             }
         });
 
-        btnLibrary.setBackground(new java.awt.Color(255, 255, 255));
         btnLibrary.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
         btnLibrary.setText("Show List");
         btnLibrary.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -137,10 +133,9 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
             }
         });
 
-        btnLibrary1.setBackground(new java.awt.Color(255, 255, 255));
         btnLibrary1.setFont(new java.awt.Font("Avenir Next", 1, 10)); // NOI18N
         btnLibrary1.setForeground(new java.awt.Color(153, 153, 153));
-        btnLibrary1.setIcon(new javax.swing.ImageIcon("/Users/doquangminh/NetBeansProjects/LibraryGUI/src/main/java/com/mycompany/librarygui/Library_Icons/icons8-search_1.png")); // NOI18N
+        btnLibrary1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\Library-Management-Official-\\LibraryGUI\\src\\main\\java\\com\\mycompany\\librarygui\\Library_Icons\\icons8-search_1.png")); // NOI18N
         btnLibrary1.setBorder(null);
         btnLibrary1.setBorderPainted(false);
         btnLibrary1.setContentAreaFilled(false);
@@ -153,7 +148,6 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTable1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

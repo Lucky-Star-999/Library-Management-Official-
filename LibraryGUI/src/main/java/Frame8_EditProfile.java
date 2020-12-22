@@ -68,7 +68,6 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
 
         jTextField1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
         jTextField1.setText(" Do");
-        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -130,7 +129,6 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
 
         jTextField2.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
         jTextField2.setText(" 0908209847");
-        jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -142,7 +140,6 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
 
         jTextField3.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
         jTextField3.setText(" Quang Minh");
-        jTextField3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
@@ -154,7 +151,6 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
 
         jTextField6.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
         jTextField6.setText(" dqminh@gmail.com");
-        jTextField6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField6ActionPerformed(evt);
@@ -166,7 +162,6 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
 
         jPasswordField1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
         jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
 
         btnSave.setBackground(new java.awt.Color(0, 122, 255));
         btnSave.setFont(new java.awt.Font("Avenir Next", 1, 14)); // NOI18N
@@ -214,7 +209,7 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnChangePassword))
                             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
@@ -455,7 +450,10 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frame8_EditProfile().setVisible(true);
+                //new Frame8_EditProfile().setVisible(true);
+                
+                //The program run here!
+                Main main = new Main();
             }
         });
     }
