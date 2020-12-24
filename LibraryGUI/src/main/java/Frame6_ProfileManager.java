@@ -82,6 +82,11 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
                 btnEditMouseExited(evt);
             }
         });
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
         jLabel3.setText("Email:");
@@ -100,6 +105,11 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
                 btnManageMouseExited(evt);
             }
         });
+        btnManage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageActionPerformed(evt);
+            }
+        });
 
         btnLogOut.setBackground(new java.awt.Color(255, 255, 255));
         btnLogOut.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
@@ -112,6 +122,11 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
                 btnLogOutMouseExited(evt);
             }
         });
+        btnLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogOutActionPerformed(evt);
+            }
+        });
 
         btnLibrary.setBackground(new java.awt.Color(255, 255, 255));
         btnLibrary.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
@@ -122,6 +137,11 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnLibraryMouseExited(evt);
+            }
+        });
+        btnLibrary.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLibraryActionPerformed(evt);
             }
         });
 
@@ -297,6 +317,31 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
         btnLogOut.setBackground(new Color(255, 255, 255));
         btnLogOut.setForeground(new Color(0, 0, 0));
     }//GEN-LAST:event_btnLogOutMouseExited
+
+    private void btnLibraryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibraryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLibraryActionPerformed
+
+    private void btnManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Frame10_ManageStudents_General frame10 = new Frame10_ManageStudents_General();
+        frame10.setVisible(true);
+    }//GEN-LAST:event_btnManageActionPerformed
+
+    private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Frame2_LoginManager frame2 = new Frame2_LoginManager();
+        frame2.setVisible(true);
+    }//GEN-LAST:event_btnLogOutActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Frame8_EditProfile frame8 = new Frame8_EditProfile();
+        frame8.setVisible(true);
+    }//GEN-LAST:event_btnEditActionPerformed
 
     /**
      * @param args the command line arguments

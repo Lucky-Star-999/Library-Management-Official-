@@ -73,6 +73,11 @@ public class Frame12_ChangeFine extends javax.swing.JFrame {
                 btnCancelMouseExited(evt);
             }
         });
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
 
         btnSaveChanges.setBackground(new java.awt.Color(0, 122, 255));
         btnSaveChanges.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
@@ -217,6 +222,13 @@ public class Frame12_ChangeFine extends javax.swing.JFrame {
     private void btnSaveChangesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveChangesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSaveChangesActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Frame11_ManageStudents_Detail frame11 = new Frame11_ManageStudents_Detail();
+        frame11.setVisible(true);
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments

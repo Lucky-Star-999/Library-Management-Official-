@@ -81,6 +81,11 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
                 btnChangeFineMouseExited(evt);
             }
         });
+        btnChangeFine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChangeFineActionPerformed(evt);
+            }
+        });
 
         btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
@@ -101,6 +106,7 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
             }
         });
 
+        jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTable1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -226,7 +232,17 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        Frame10_ManageStudents_General frame10 = new Frame10_ManageStudents_General();
+        frame10.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnChangeFineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeFineActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Frame12_ChangeFine frame11 = new Frame12_ChangeFine();
+        frame11.setVisible(true);
+    }//GEN-LAST:event_btnChangeFineActionPerformed
 
     /**
      * @param args the command line arguments

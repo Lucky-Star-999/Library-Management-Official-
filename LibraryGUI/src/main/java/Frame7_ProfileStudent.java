@@ -102,6 +102,11 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
                 btnManageMouseExited(evt);
             }
         });
+        btnManage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageActionPerformed(evt);
+            }
+        });
 
         btnLogOut.setBackground(new java.awt.Color(255, 255, 255));
         btnLogOut.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
@@ -114,6 +119,11 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
                 btnLogOutMouseExited(evt);
             }
         });
+        btnLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogOutActionPerformed(evt);
+            }
+        });
 
         btnLibrary.setBackground(new java.awt.Color(255, 255, 255));
         btnLibrary.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
@@ -124,6 +134,11 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnLibraryMouseExited(evt);
+            }
+        });
+        btnLibrary.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLibraryActionPerformed(evt);
             }
         });
 
@@ -322,6 +337,27 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void btnManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Frame13_SeeBorrowedBooks frame13 = new Frame13_SeeBorrowedBooks();
+        frame13.setVisible(true);
+    }//GEN-LAST:event_btnManageActionPerformed
+
+    private void btnLibraryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibraryActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Frame14_Book_Student frame14 = new Frame14_Book_Student();
+        frame14.setVisible(true);
+    }//GEN-LAST:event_btnLibraryActionPerformed
+
+    private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Frame3_LoginStudent frame3 = new Frame3_LoginStudent();
+        frame3.setVisible(true);
+    }//GEN-LAST:event_btnLogOutActionPerformed
 
     /**
      * @param args the command line arguments

@@ -189,6 +189,9 @@ public class Frame13_SeeBorrowedBooks extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        Frame7_ProfileStudent frame7 = new Frame7_ProfileStudent();
+        frame7.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
 
     /**
