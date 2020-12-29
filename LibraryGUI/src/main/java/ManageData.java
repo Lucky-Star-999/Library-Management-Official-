@@ -105,7 +105,8 @@ public class ManageData {
     
     //Save the manager list in a file
     public void saveAllManager(){
-	String path = new File("src\\databaseSaving\\All Managers.txt").getAbsolutePath();
+	//String path = new File("src\\databaseSaving\\All Managers.txt").getAbsolutePath();
+        String path = new File("src/main/java/database/All Managers.txt").getAbsolutePath();
         
         try (FileWriter fstream = new FileWriter(path);
 	    BufferedWriter info = new BufferedWriter(fstream)) {
@@ -126,7 +127,8 @@ public class ManageData {
     
     //Load file of managers
     public void loadAllManager(){
-        String path = new File("src\\databaseSaving\\All Managers.txt").getAbsolutePath();;
+        //String path = new File("src\\databaseSaving\\All Managers.txt").getAbsolutePath();
+        String path = new File("src/main/java/database/All Managers.txt").getAbsolutePath();
         try {
             List<String> content = Files.readAllLines(Paths.get(path), StandardCharsets.UTF_8);
             String username = "0";
@@ -152,7 +154,8 @@ public class ManageData {
     
     //Save the student list in a file
     public void saveAllStudent(){
-	String path = new File("src\\databaseSaving\\All Students.txt").getAbsolutePath();
+	//String path = new File("src\\databaseSaving\\All Students.txt").getAbsolutePath();
+        String path = new File("src/main/java/database/All Students.txt").getAbsolutePath();
         
         try (FileWriter fstream = new FileWriter(path);
 	    BufferedWriter info = new BufferedWriter(fstream)) {
@@ -175,7 +178,8 @@ public class ManageData {
     
     //Load file of students
     public void loadAllStudent(){
-        String path = new File("src\\databaseSaving\\All Students.txt").getAbsolutePath();;
+        //String path = new File("src\\databaseSaving\\All Students.txt").getAbsolutePath();
+        String path = new File("src/main/java/database/All Students.txt").getAbsolutePath();
         try {
             List<String> content = Files.readAllLines(Paths.get(path), StandardCharsets.UTF_8);
             String username = "0";

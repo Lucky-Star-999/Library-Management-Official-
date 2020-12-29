@@ -1,5 +1,6 @@
 
 import javax.swing.JFrame;
+import java.io.File;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -32,11 +33,23 @@ public class Main {
         Frame13_SeeBorrowedBooks frame13 = new Frame13_SeeBorrowedBooks();
         Frame14_Book_Student frame14 = new Frame14_Book_Student();
                 
-                
+        
+        File tmpDir = new File("src/main/java/database/All Managers.txt");
+        boolean exists = tmpDir.exists();
+        if (exists){
+            ManageData.getManageData().loadAllManager();
+        }
+        
+        /*File tmpDir2 = new File("src/main/java/database/All Students.txt");
+        boolean exists2 = tmpDir.exists();
+        if (exists2){
+            ManageData.getManageData().loadAllStudent();
+        }*/
+        
         
         //Change the variable to test any frame
         JFrame frameTest = new JFrame();
-        frameTest = frame6;
+        frameTest = frame2;
         
         
         

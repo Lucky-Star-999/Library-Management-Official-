@@ -1,5 +1,6 @@
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -35,21 +36,21 @@ public class Frame4_RegisterManager extends javax.swing.JFrame {
         bg = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        textFieldFullName = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        textFieldUsername = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
-        jTextField5 = new javax.swing.JTextField();
+        textFieldEmail = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jSeparator8 = new javax.swing.JSeparator();
-        jTextField6 = new javax.swing.JTextField();
+        textFieldPhone = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
-        jPasswordField5 = new javax.swing.JPasswordField();
+        passwordField = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
@@ -78,11 +79,11 @@ public class Frame4_RegisterManager extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Full Name");
 
-        jTextField2.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        textFieldFullName.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
+        textFieldFullName.setBorder(null);
+        textFieldFullName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                textFieldFullNameActionPerformed(evt);
             }
         });
 
@@ -128,11 +129,11 @@ public class Frame4_RegisterManager extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
         jLabel7.setText("Username");
 
-        jTextField3.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
-        jTextField3.setBorder(null);
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        textFieldUsername.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
+        textFieldUsername.setBorder(null);
+        textFieldUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                textFieldUsernameActionPerformed(evt);
             }
         });
 
@@ -144,11 +145,11 @@ public class Frame4_RegisterManager extends javax.swing.JFrame {
         jSeparator7.setAlignmentX(0.0F);
         jSeparator7.setAlignmentY(0.0F);
 
-        jTextField5.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
-        jTextField5.setBorder(null);
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        textFieldEmail.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
+        textFieldEmail.setBorder(null);
+        textFieldEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                textFieldEmailActionPerformed(evt);
             }
         });
 
@@ -160,11 +161,11 @@ public class Frame4_RegisterManager extends javax.swing.JFrame {
         jSeparator8.setAlignmentX(0.0F);
         jSeparator8.setAlignmentY(0.0F);
 
-        jTextField6.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
-        jTextField6.setBorder(null);
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        textFieldPhone.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
+        textFieldPhone.setBorder(null);
+        textFieldPhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                textFieldPhoneActionPerformed(evt);
             }
         });
 
@@ -176,8 +177,8 @@ public class Frame4_RegisterManager extends javax.swing.JFrame {
         jSeparator9.setAlignmentX(0.0F);
         jSeparator9.setAlignmentY(0.0F);
 
-        jPasswordField5.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
-        jPasswordField5.setBorder(null);
+        passwordField.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
+        passwordField.setBorder(null);
 
         jLabel3.setFont(new java.awt.Font("Avenir", 0, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
@@ -231,19 +232,19 @@ public class Frame4_RegisterManager extends javax.swing.JFrame {
                         .addGap(60, 60, 60)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textFieldUsername, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textFieldEmail, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPasswordField5, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textFieldPhone, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(passwordField, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator9, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2)))
+                            .addComponent(textFieldFullName)))
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(100, Short.MAX_VALUE))
         );
@@ -258,32 +259,32 @@ public class Frame4_RegisterManager extends javax.swing.JFrame {
                     .addComponent(jButton1))
                 .addGap(35, 35, 35)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPasswordField5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
@@ -324,12 +325,46 @@ public class Frame4_RegisterManager extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void textFieldFullNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldFullNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_textFieldFullNameActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        String username = textFieldUsername.getText();
+        
+        
+        if(!textFieldEmail.getText().equals("") && !textFieldFullName.getText().equals("") ){
+            if (!textFieldPhone.getText().equals("") && !String.valueOf(passwordField.getPassword()).equals("")){
+                if (!username.equals("")){
+                    boolean checkLogin = true;
+        
+                    for (String key : ManageData.getManageData().allManager.keySet()){
+                        if (key.equals(username))
+                            checkLogin = false;
+                    }
+                    
+                    if (checkLogin){
+                        ManageData.getManageData().allManager.put(username, new Manager());
+                        ManageData.getManageData().allManager.get(username).setUsername(username);
+                        ManageData.getManageData().allManager.get(username).setEmail(textFieldEmail.getText());
+                        ManageData.getManageData().allManager.get(username).setFullName(textFieldFullName.getText());
+                        ManageData.getManageData().allManager.get(username).setPhone(textFieldPhone.getText());
+                        ManageData.getManageData().allManager.get(username).setPassword(String.valueOf(passwordField.getPassword()));
+
+                        ManageData.getManageData().saveAllManager();
+                        JOptionPane.showMessageDialog(null, "Register successfully!\nPress \"Cancel\" to login!");
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Duplicate the old username!\nChoose another username!");
+                    }
+                    
+                }
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Please fill in all information!");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -339,17 +374,17 @@ public class Frame4_RegisterManager extends javax.swing.JFrame {
         frame2.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void textFieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_textFieldUsernameActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void textFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_textFieldEmailActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void textFieldPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldPhoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_textFieldPhoneActionPerformed
 
     private void jButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseEntered
         // TODO add your handling code here:
@@ -440,16 +475,16 @@ public class Frame4_RegisterManager extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField3;
-    private javax.swing.JPasswordField jPasswordField5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JPasswordField passwordField;
+    private javax.swing.JTextField textFieldEmail;
+    private javax.swing.JTextField textFieldFullName;
+    private javax.swing.JTextField textFieldPhone;
+    private javax.swing.JTextField textFieldUsername;
     // End of variables declaration//GEN-END:variables
 }
