@@ -33,6 +33,7 @@ public class Main {
         Frame13_SeeBorrowedBooks frame13 = new Frame13_SeeBorrowedBooks();
         Frame14_Book_Student frame14 = new Frame14_Book_Student();
         Frame15_EditProfileStudent frame15 = new Frame15_EditProfileStudent();
+        Frame16_Book_Manager frame16 = new Frame16_Book_Manager();
                 
         
         File tmpDir = new File("src/main/java/database/All Managers.txt");
@@ -50,7 +51,7 @@ public class Main {
         
         //Change the variable to test any frame
         JFrame frameTest = new JFrame();
-        frameTest = frame5;
+        frameTest = frame16;
         
         
         
