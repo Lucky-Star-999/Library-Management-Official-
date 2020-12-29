@@ -40,11 +40,11 @@ public class Main {
             ManageData.getManageData().loadAllManager();
         }
         
-        /*File tmpDir2 = new File("src/main/java/database/All Students.txt");
-        boolean exists2 = tmpDir.exists();
+        File tmpDir2 = new File("src/main/java/database/All Students.txt");
+        boolean exists2 = tmpDir2.exists();
         if (exists2){
             ManageData.getManageData().loadAllStudent();
-        }*/
+        }
         
         
         //Change the variable to test any frame
