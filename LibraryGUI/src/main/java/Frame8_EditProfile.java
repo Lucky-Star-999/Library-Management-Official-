@@ -18,6 +18,24 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
      */
     public Frame8_EditProfile() {
         initComponents();
+        
+        //Set the default information
+        if(ManageData.getManageData().getWho_is_using_this_program()!=null){
+            String username = ManageData.getManageData().getWho_is_using_this_program();
+            
+            String fullName = ManageData.getManageData().allManager.get(username).getFullName();
+            textFieldFullName.setText(fullName);
+            
+            String email = ManageData.getManageData().allManager.get(username).getEmail();
+            textFieldEmail.setText(email);
+            
+            String phone = ManageData.getManageData().allManager.get(username).getPhone();
+            textFieldPhone.setText(phone);
+            
+            String password = ManageData.getManageData().allManager.get(username).getPassword();
+            passwordField.setText(password);
+        }
+        
     }
 
     /**
@@ -33,22 +51,19 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         btnUpload = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
-        btnChangePassword = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        textFieldPhone = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        textFieldFullName = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        textFieldEmail = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        passwordField = new javax.swing.JPasswordField();
         btnSave = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
@@ -65,14 +80,6 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Avenir Next", 0, 20)); // NOI18N
         jLabel2.setText("Security");
-
-        jTextField1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
-        jTextField1.setText(" Do");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
 
         btnUpload.setBackground(new java.awt.Color(0, 122, 255));
         btnUpload.setFont(new java.awt.Font("Avenir Next", 1, 14)); // NOI18N
@@ -108,60 +115,50 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
             }
         });
 
-        btnChangePassword.setFont(new java.awt.Font("Avenir Next", 1, 14)); // NOI18N
-        btnChangePassword.setText("Change Password");
-        btnChangePassword.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnChangePasswordMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnChangePasswordMouseExited(evt);
-            }
-        });
-
         jLabel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jLabel6.setFont(new java.awt.Font("Avenir Next", 0, 16)); // NOI18N
-        jLabel6.setText("LAST NAME");
 
         jLabel7.setFont(new java.awt.Font("Avenir Next", 0, 16)); // NOI18N
         jLabel7.setText("PHONE");
 
-        jTextField2.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
-        jTextField2.setText(" 0908209847");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        textFieldPhone.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
+        textFieldPhone.setText(" 0908209847");
+        textFieldPhone.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        textFieldPhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                textFieldPhoneActionPerformed(evt);
             }
         });
 
         jLabel8.setFont(new java.awt.Font("Avenir Next", 0, 16)); // NOI18N
-        jLabel8.setText("FIRST NAME");
+        jLabel8.setText("FULL NAME");
 
-        jTextField3.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
-        jTextField3.setText(" Quang Minh");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        textFieldFullName.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
+        textFieldFullName.setText(" Quang Minh");
+        textFieldFullName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        textFieldFullName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                textFieldFullNameActionPerformed(evt);
             }
         });
 
         jLabel9.setFont(new java.awt.Font("Avenir Next", 0, 16)); // NOI18N
         jLabel9.setText("EMAIL");
 
-        jTextField6.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
-        jTextField6.setText(" dqminh@gmail.com");
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        textFieldEmail.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
+        textFieldEmail.setText(" dqminh@gmail.com");
+        textFieldEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        textFieldEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                textFieldEmailActionPerformed(evt);
             }
         });
 
         jLabel3.setFont(new java.awt.Font("Avenir Next", 0, 20)); // NOI18N
         jLabel3.setText("Basic Info");
 
-        jPasswordField1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
-        jPasswordField1.setText("jPasswordField1");
+        passwordField.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
+        passwordField.setText("jPasswordField1");
+        passwordField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
 
         btnSave.setBackground(new java.awt.Color(0, 122, 255));
         btnSave.setFont(new java.awt.Font("Avenir Next", 1, 14)); // NOI18N
@@ -173,6 +170,11 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnSaveMouseExited(evt);
+            }
+        });
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
             }
         });
 
@@ -204,12 +206,9 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel10)
-                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnChangePassword))
+                        .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
@@ -217,7 +216,7 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
                             .addGap(70, 70, 70)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel7)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(textFieldPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -227,16 +226,10 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGap(70, 70, 70)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel8)
-                                            .addGap(149, 149, 149)
-                                            .addComponent(jLabel6))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(23, 23, 23)
-                                            .addComponent(jTextField1))
+                                        .addComponent(jLabel8)
                                         .addComponent(jLabel9)
-                                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(textFieldEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+                                        .addComponent(textFieldFullName)))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                     .addGap(72, 72, 72)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -270,17 +263,13 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel6))
+                        .addComponent(jLabel8)
                         .addGap(8, 8, 8)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(textFieldFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
                         .addComponent(jLabel9)
                         .addGap(8, 8, 8)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(textFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -289,19 +278,16 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(8, 8, 8)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(jLabel2))
-                    .addComponent(btnChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(textFieldPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(jLabel10)
                 .addGap(3, 3, 3)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50))
         );
 
@@ -336,22 +322,6 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void btnChangePasswordMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangePasswordMouseEntered
-        // TODO add your handling code here:
-        btnChangePassword.setBackground(new Color(20, 142, 255));
-        btnChangePassword.setForeground(new Color(255, 255, 255));
-    }//GEN-LAST:event_btnChangePasswordMouseEntered
-
-    private void btnChangePasswordMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangePasswordMouseExited
-        // TODO add your handling code here:
-        btnChangePassword.setBackground(new Color(255, 255, 255));
-        btnChangePassword.setForeground(new Color(0, 0, 0));
-    }//GEN-LAST:event_btnChangePasswordMouseExited
-
     private void btnUploadMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUploadMouseEntered
         // TODO add your handling code here:
         btnUpload.setBackground(new Color(0, 64, 221));
@@ -374,17 +344,17 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
         btnDelete.setForeground(new Color(0, 0, 0));
     }//GEN-LAST:event_btnDeleteMouseExited
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void textFieldPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldPhoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_textFieldPhoneActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void textFieldFullNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldFullNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_textFieldFullNameActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void textFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_textFieldEmailActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
@@ -414,11 +384,42 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        Frame6_ProfileManager frame6 = new Frame6_ProfileManager();
+        frame6.setVisible(true);
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnUploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUploadActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        // TODO add your handling code here:
+        String username = ManageData.getManageData().getWho_is_using_this_program();
+        
+        //Changing the name
+        String fullName = textFieldFullName.getText();
+        ManageData.getManageData().allManager.get(username).setFullName(fullName);
+        
+        //Edit the email
+        String email = textFieldEmail.getText();
+        ManageData.getManageData().allManager.get(username).setEmail(email);
+        
+        //Edit phone number
+        String phone = textFieldPhone.getText();
+        ManageData.getManageData().allManager.get(username).setPhone(phone);
+        
+        //Edit password
+        String password = String.valueOf(passwordField.getPassword());
+        ManageData.getManageData().allManager.get(username).setPassword(password);
+        
+        ManageData.getManageData().saveAllManager();
+        
+        //Return the profile
+        this.dispose();
+        Frame6_ProfileManager frame6 = new Frame6_ProfileManager();
+        frame6.setVisible(true);
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -460,7 +461,6 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
-    private javax.swing.JButton btnChangePassword;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnUpload;
@@ -469,18 +469,16 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JPasswordField passwordField;
+    private javax.swing.JTextField textFieldEmail;
+    private javax.swing.JTextField textFieldFullName;
+    private javax.swing.JTextField textFieldPhone;
     // End of variables declaration//GEN-END:variables
 }
