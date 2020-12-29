@@ -1,6 +1,11 @@
 
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.io.File;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -18,6 +23,27 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
      */
     public Frame7_ProfileStudent() {
         initComponents();
+        
+        if(ManageData.getManageData().getWho_is_using_this_program()!=null){
+            String userIsUsing = ManageData.getManageData().getWho_is_using_this_program();
+            textFieldFullName.setText(ManageData.getManageData().allStudent.get(userIsUsing).getFullName());
+            textFieldEmail.setText(ManageData.getManageData().allStudent.get(userIsUsing).getEmail());
+            textFieldPhone.setText(ManageData.getManageData().allStudent.get(userIsUsing).getPhone());
+            
+            String linkAvatar = ManageData.getManageData().allStudent.get(userIsUsing).getLinkOfAvatar();
+            
+            Image im = Toolkit.getDefaultToolkit().createImage(linkAvatar);
+            im = im.getScaledInstance(textFieldImage.getWidth(), textFieldImage.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon ii = new ImageIcon(im);
+            
+            if (linkAvatar==null){
+                textFieldImage.setText("");
+            }
+            
+            textFieldImage.setIcon(ii);
+            
+            
+        }
     }
 
     /**
@@ -33,18 +59,18 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        textFieldFullName = new javax.swing.JTextField();
         btnEdit = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnManage = new javax.swing.JButton();
         btnLogOut = new javax.swing.JButton();
         btnLibrary = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        textFieldImage = new javax.swing.JLabel();
+        textFieldEmail = new javax.swing.JTextField();
+        textFieldPhone = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        textFieldID = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,13 +85,13 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
         jLabel2.setText("Name:");
 
-        jTextField1.setEditable(false);
-        jTextField1.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
-        jTextField1.setText("Do Quang Minh");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        textFieldFullName.setEditable(false);
+        textFieldFullName.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
+        textFieldFullName.setText("Do Quang Minh");
+        textFieldFullName.setBorder(null);
+        textFieldFullName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                textFieldFullNameActionPerformed(evt);
             }
         });
 
@@ -82,6 +108,11 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnEditMouseExited(evt);
+            }
+        });
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
             }
         });
 
@@ -142,38 +173,38 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        textFieldImage.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jTextField4.setEditable(false);
-        jTextField4.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
-        jTextField4.setText("abc.123@gmail.com");
-        jTextField4.setBorder(null);
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        textFieldEmail.setEditable(false);
+        textFieldEmail.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
+        textFieldEmail.setText("abc.123@gmail.com");
+        textFieldEmail.setBorder(null);
+        textFieldEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                textFieldEmailActionPerformed(evt);
             }
         });
 
-        jTextField5.setEditable(false);
-        jTextField5.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
-        jTextField5.setText("0909000111");
-        jTextField5.setBorder(null);
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        textFieldPhone.setEditable(false);
+        textFieldPhone.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
+        textFieldPhone.setText("0909000111");
+        textFieldPhone.setBorder(null);
+        textFieldPhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                textFieldPhoneActionPerformed(evt);
             }
         });
 
         jLabel6.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
         jLabel6.setText("ID:");
 
-        jTextField2.setEditable(false);
-        jTextField2.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
-        jTextField2.setText("ITITIU19028");
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        textFieldID.setEditable(false);
+        textFieldID.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
+        textFieldID.setText("ITITIU19028");
+        textFieldID.setBorder(null);
+        textFieldID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                textFieldIDActionPerformed(evt);
             }
         });
 
@@ -187,7 +218,7 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
                     .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                            .addComponent(textFieldImage, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
                             .addGap(78, 78, 78)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel2)
@@ -196,10 +227,10 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
                                 .addComponent(jLabel6))
                             .addGap(18, 18, 18)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField1)
-                                .addComponent(jTextField2)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
-                                .addComponent(jTextField5)))
+                                .addComponent(textFieldFullName)
+                                .addComponent(textFieldID)
+                                .addComponent(textFieldEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                                .addComponent(textFieldPhone)))
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -216,24 +247,24 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(50, 50, 50)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldImage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textFieldFullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(textFieldPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEdit)
                 .addGap(40, 40, 40)
@@ -276,9 +307,9 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void textFieldFullNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldFullNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_textFieldFullNameActionPerformed
 
     private void btnEditMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditMouseEntered
         // TODO add your handling code here:
@@ -290,13 +321,13 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
         btnEdit.setForeground(new Color(255,169,20));
     }//GEN-LAST:event_btnEditMouseExited
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void textFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_textFieldEmailActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void textFieldPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldPhoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_textFieldPhoneActionPerformed
 
     private void btnLibraryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLibraryMouseEntered
         // TODO add your handling code here:
@@ -334,9 +365,9 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
         btnLogOut.setForeground(new Color(0, 0, 0));
     }//GEN-LAST:event_btnLogOutMouseExited
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void textFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_textFieldIDActionPerformed
 
     private void btnManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageActionPerformed
         // TODO add your handling code here:
@@ -358,6 +389,13 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
         Frame3_LoginStudent frame3 = new Frame3_LoginStudent();
         frame3.setVisible(true);
     }//GEN-LAST:event_btnLogOutActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Frame15_EditProfileStudent frame15 = new Frame15_EditProfileStudent();
+        frame15.setVisible(true);        
+    }//GEN-LAST:event_btnEditActionPerformed
 
     /**
      * @param args the command line arguments
@@ -403,13 +441,13 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField textFieldEmail;
+    private javax.swing.JTextField textFieldFullName;
+    private javax.swing.JTextField textFieldID;
+    private javax.swing.JLabel textFieldImage;
+    private javax.swing.JTextField textFieldPhone;
     // End of variables declaration//GEN-END:variables
 }

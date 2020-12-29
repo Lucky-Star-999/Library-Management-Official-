@@ -22,7 +22,7 @@ public class Main {
         Frame2_LoginManager frame2 = new Frame2_LoginManager();
         Frame3_LoginStudent frame3 = new Frame3_LoginStudent();
         Frame4_RegisterManager frame4 = new Frame4_RegisterManager();
-        //Frame5_RegisterStudent frame5 = new Frame5_RegisterStudent();
+        Frame5_RegisterStudent frame5 = new Frame5_RegisterStudent();
         Frame6_ProfileManager frame6 = new Frame6_ProfileManager();
         Frame7_ProfileStudent frame7 = new Frame7_ProfileStudent();
         Frame8_EditProfile frame8 = new Frame8_EditProfile();
@@ -32,6 +32,7 @@ public class Main {
         Frame12_ChangeFine frame12 = new Frame12_ChangeFine();
         Frame13_SeeBorrowedBooks frame13 = new Frame13_SeeBorrowedBooks();
         Frame14_Book_Student frame14 = new Frame14_Book_Student();
+        Frame15_EditProfileStudent frame15 = new Frame15_EditProfileStudent();
                 
         
         File tmpDir = new File("src/main/java/database/All Managers.txt");
@@ -49,7 +50,7 @@ public class Main {
         
         //Change the variable to test any frame
         JFrame frameTest = new JFrame();
-        frameTest = frame2;
+        frameTest = frame5;
         
         
         
