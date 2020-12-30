@@ -1,6 +1,15 @@
 
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -20,6 +29,7 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
         initComponents();
         
         //Set the default information
+        String userIsUsing = ManageData.getManageData().getWho_is_using_this_program();
         if(ManageData.getManageData().getWho_is_using_this_program()!=null){
             String username = ManageData.getManageData().getWho_is_using_this_program();
             
@@ -34,6 +44,20 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
             
             String password = ManageData.getManageData().allManager.get(username).getPassword();
             passwordField.setText(password);
+            
+            //Insert default image
+            String linkAvatar = ManageData.getManageData().allManager.get(userIsUsing).getLinkOfAvatar();
+            
+            Image im = Toolkit.getDefaultToolkit().createImage(linkAvatar);
+            im = im.getScaledInstance(textFieldImage.getWidth(), textFieldImage.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon ii = new ImageIcon(im);
+            
+            if (linkAvatar==null){
+                textFieldImage.setText("");
+            }
+            
+            textFieldImage.setIcon(ii);
+            ManageData.getManageData().setTemporaryAvatar(linkAvatar);
         }
         
     }
@@ -53,7 +77,7 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnUpload = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        textFieldImage = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
         textFieldPhone = new javax.swing.JTextField();
@@ -115,7 +139,7 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        textFieldImage.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel7.setFont(new java.awt.Font("Avenir Next", 0, 16)); // NOI18N
         jLabel7.setText("PHONE");
@@ -214,7 +238,7 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(textFieldImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(70, 70, 70)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -270,7 +294,7 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
                         .addComponent(textFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(9, 9, 9)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(textFieldImage, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -361,6 +385,20 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
+        String userUsing = ManageData.getManageData().getWho_is_using_this_program();
+        //ManageData.getManageData().allStudent.get(userUsing).setLinkOfAvatar(null);
+        String oldPath = ManageData.getManageData().allManager.get(userUsing).getLinkOfAvatar();
+
+        ManageData.getManageData().setTemporaryAvatar(null);
+        //Save ...
+        //ManageData.getManageData().saveAllStudent();
+        
+            String linkAvatar = null;
+            Image im = Toolkit.getDefaultToolkit().createImage(linkAvatar);
+            im = im.getScaledInstance(textFieldImage.getWidth(), textFieldImage.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon ii = new ImageIcon(im);
+            textFieldImage.setText("");
+            textFieldImage.setIcon(ii);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnSaveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaveMouseEntered
@@ -394,6 +432,34 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
 
     private void btnUploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadActionPerformed
         // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f = chooser.getSelectedFile();
+        if (f!=null){
+            String path = f.getAbsolutePath();       
+            
+            //Create image
+            Image im = Toolkit.getDefaultToolkit().createImage(path);
+            im = im.getScaledInstance(textFieldImage.getWidth(), textFieldImage.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon ii = new ImageIcon(im);
+            
+            textFieldImage.setText("");
+            textFieldImage.setIcon(ii);
+            
+            
+            File file = new File(path);
+            String newPath = "src/main/java/avatar/" + file.getName();
+            File file2 = new File(newPath);
+            String userUsing = ManageData.getManageData().getWho_is_using_this_program();
+            ManageData.getManageData().setTemporaryAvatar(newPath);
+            
+            try{
+                ManageData.getManageData().copyFileUsingChannel(file, file2);
+            }
+            catch (Exception e){
+                System.out.println("");
+            }
+        }
     }//GEN-LAST:event_btnUploadActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
@@ -415,6 +481,31 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
         //Edit password
         String password = String.valueOf(passwordField.getPassword());
         ManageData.getManageData().allManager.get(username).setPassword(password);
+        
+        
+        //Edit avatar
+        String path = ManageData.getManageData().getTemporaryAvatar();
+        String oldPath = ManageData.getManageData().allManager.get(username).getLinkOfAvatar();
+        
+
+            if (path==null && oldPath!=null){
+                if (path==null && !oldPath.equals("null")){
+                    try {
+                        if (oldPath!=null){
+                            if (ManageData.getManageData().checkingNotDuplicateAvatarFile(path)){
+                                Files.delete(Paths.get(oldPath));
+                            }
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+ 
+
+        
+        ManageData.getManageData().allManager.get(username).setLinkOfAvatar(path);
         
         ManageData.getManageData().saveAllManager();
         
@@ -471,7 +562,6 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -482,6 +572,7 @@ public class Frame8_EditProfile extends javax.swing.JFrame {
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField textFieldEmail;
     private javax.swing.JTextField textFieldFullName;
+    private javax.swing.JLabel textFieldImage;
     private javax.swing.JTextField textFieldPhone;
     // End of variables declaration//GEN-END:variables
 }

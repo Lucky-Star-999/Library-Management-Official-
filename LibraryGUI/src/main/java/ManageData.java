@@ -327,4 +327,25 @@ public class ManageData {
         }
     }
     
+    public boolean checkingNotDuplicateAvatarFile(String path){
+        int count = 0;
+        for(Manager value: ManageData.getManageData().allManager.values()){
+            if (value.getLinkOfAvatar().equals(path)){
+                count++;
+            }
+        }
+        for(Student value: ManageData.getManageData().allStudent.values()){
+            if (value.getLinkOfAvatar().equals(path)){
+                count++;
+            }
+        }
+        
+        if (count == 1){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
+    }
 }

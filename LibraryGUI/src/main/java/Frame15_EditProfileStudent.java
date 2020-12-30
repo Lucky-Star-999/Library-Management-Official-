@@ -521,7 +521,9 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
             if (path==null && !oldPath.equals("null")){
                 try {
                     if (oldPath!=null){
-                        Files.delete(Paths.get(oldPath));
+                        if (ManageData.getManageData().checkingNotDuplicateAvatarFile(path)){
+                            Files.delete(Paths.get(oldPath));
+                        }
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
