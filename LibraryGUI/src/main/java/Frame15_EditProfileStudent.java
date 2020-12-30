@@ -29,6 +29,9 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
             String email = ManageData.getManageData().allStudent.get(username).getEmail();
             textFieldEmail.setText(email);
             
+            String id = ManageData.getManageData().allStudent.get(username).getIdStudent();
+            textFieldID.setText(id);
+            
             String phone = ManageData.getManageData().allStudent.get(username).getPhone();
             textFieldPhone.setText(phone);
             
@@ -68,7 +71,7 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
         btnCancel = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        textFieldFullName1 = new javax.swing.JTextField();
+        textFieldID = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -202,12 +205,12 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Avenir Next", 0, 16)); // NOI18N
         jLabel11.setText("STUDENT ID");
 
-        textFieldFullName1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
-        textFieldFullName1.setText(" ITITIU19028");
-        textFieldFullName1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        textFieldFullName1.addActionListener(new java.awt.event.ActionListener() {
+        textFieldID.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
+        textFieldID.setText(" ITITIU19028");
+        textFieldID.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        textFieldID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldFullName1ActionPerformed(evt);
+                textFieldIDActionPerformed(evt);
             }
         });
 
@@ -237,7 +240,7 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
                                 .addComponent(jLabel11)
                                 .addComponent(textFieldEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
                                 .addComponent(textFieldFullName)
-                                .addComponent(textFieldFullName1))
+                                .addComponent(textFieldID))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -273,7 +276,7 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)
-                        .addComponent(textFieldFullName1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -414,6 +417,10 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
         String email = textFieldEmail.getText();
         ManageData.getManageData().allStudent.get(username).setEmail(email);
         
+        //Edit ID
+        String id = textFieldID.getText();
+        ManageData.getManageData().allStudent.get(username).setIdStudent(id);
+        
         //Edit phone number
         String phone = textFieldPhone.getText();
         ManageData.getManageData().allStudent.get(username).setPhone(phone);
@@ -430,9 +437,9 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
         frame7.setVisible(true);
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    private void textFieldFullName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldFullName1ActionPerformed
+    private void textFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldFullName1ActionPerformed
+    }//GEN-LAST:event_textFieldIDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -493,7 +500,7 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField textFieldEmail;
     private javax.swing.JTextField textFieldFullName;
-    private javax.swing.JTextField textFieldFullName1;
+    private javax.swing.JTextField textFieldID;
     private javax.swing.JTextField textFieldPhone;
     // End of variables declaration//GEN-END:variables
 }

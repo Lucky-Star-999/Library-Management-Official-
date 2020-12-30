@@ -56,7 +56,7 @@ public class Frame5_RegisterStudent extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         btnBack2 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        textFieldUsername1 = new javax.swing.JTextField();
+        textFieldID = new javax.swing.JTextField();
         jSeparator10 = new javax.swing.JSeparator();
 
         jLabel5.setFont(new java.awt.Font("Gill Sans", 0, 30)); // NOI18N
@@ -218,11 +218,11 @@ public class Frame5_RegisterStudent extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
         jLabel8.setText("Student ID");
 
-        textFieldUsername1.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
-        textFieldUsername1.setBorder(null);
-        textFieldUsername1.addActionListener(new java.awt.event.ActionListener() {
+        textFieldID.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
+        textFieldID.setBorder(null);
+        textFieldID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldUsername1ActionPerformed(evt);
+                textFieldIDActionPerformed(evt);
             }
         });
 
@@ -268,7 +268,7 @@ public class Frame5_RegisterStudent extends javax.swing.JFrame {
                             .addComponent(textFieldPhone)
                             .addComponent(jSeparator9)
                             .addComponent(textFieldFullName, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(textFieldUsername1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
+                            .addComponent(textFieldID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
                             .addComponent(passwordField, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(55, 55, 55)
@@ -313,7 +313,7 @@ public class Frame5_RegisterStudent extends javax.swing.JFrame {
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(textFieldUsername1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -379,7 +379,7 @@ public class Frame5_RegisterStudent extends javax.swing.JFrame {
         String username = textFieldUsername.getText();
         
         
-        if(!textFieldEmail.getText().equals("") && !textFieldFullName.getText().equals("") ){
+        if(!textFieldEmail.getText().equals("") && !textFieldID.getText().equals("") && !textFieldFullName.getText().equals("") ){
             if (!textFieldPhone.getText().equals("") && !String.valueOf(passwordField.getPassword()).equals("")){
                 if (!username.equals("")){
                     boolean checkLogin = true;
@@ -395,6 +395,7 @@ public class Frame5_RegisterStudent extends javax.swing.JFrame {
                         ManageData.getManageData().allStudent.get(username).setEmail(textFieldEmail.getText());
                         ManageData.getManageData().allStudent.get(username).setFullName(textFieldFullName.getText());
                         ManageData.getManageData().allStudent.get(username).setPhone(textFieldPhone.getText());
+                        ManageData.getManageData().allStudent.get(username).setIdStudent(textFieldID.getText());
                         ManageData.getManageData().allStudent.get(username).setPassword(String.valueOf(passwordField.getPassword()));
 
                         ManageData.getManageData().saveAllStudent();
@@ -470,9 +471,9 @@ public class Frame5_RegisterStudent extends javax.swing.JFrame {
         jButton1.setForeground(new Color(64, 156, 255));
     }//GEN-LAST:event_jButton1MouseExited
 
-    private void textFieldUsername1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldUsername1ActionPerformed
+    private void textFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldUsername1ActionPerformed
+    }//GEN-LAST:event_textFieldIDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -536,8 +537,8 @@ public class Frame5_RegisterStudent extends javax.swing.JFrame {
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField textFieldEmail;
     private javax.swing.JTextField textFieldFullName;
+    private javax.swing.JTextField textFieldID;
     private javax.swing.JTextField textFieldPhone;
     private javax.swing.JTextField textFieldUsername;
-    private javax.swing.JTextField textFieldUsername1;
     // End of variables declaration//GEN-END:variables
 }

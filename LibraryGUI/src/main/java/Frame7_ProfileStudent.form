@@ -92,7 +92,7 @@
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="textFieldFullName" max="32767" attributes="0"/>
-                                          <Component id="textFieldID" max="32767" attributes="0"/>
+                                          <Component id="textFieldId" max="32767" attributes="0"/>
                                           <Component id="textFieldEmail" pref="248" max="32767" attributes="0"/>
                                           <Component id="textFieldPhone" alignment="0" max="32767" attributes="0"/>
                                       </Group>
@@ -128,7 +128,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                  <Component id="textFieldID" min="-2" max="-2" attributes="0"/>
+                                  <Component id="textFieldId" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -314,7 +314,7 @@
                 <Property name="text" type="java.lang.String" value="ID:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="textFieldID">
+            <Component class="javax.swing.JTextField" name="textFieldId">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -326,7 +326,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldIDActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldIdActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
