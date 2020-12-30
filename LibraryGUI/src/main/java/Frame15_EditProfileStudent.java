@@ -59,6 +59,7 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
             }
             
             textFieldImage.setIcon(ii);
+            ManageData.getManageData().setTemporaryAvatar(linkAvatar);
         }
         
     }
@@ -448,11 +449,24 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
             textFieldImage.setText("");
             textFieldImage.setIcon(ii);
             
+            
+            File file = new File(path);
+            String newPath = "src/main/java/avatar/" + file.getName();
+            File file2 = new File(newPath);
             String userUsing = ManageData.getManageData().getWho_is_using_this_program();
-            ManageData.getManageData().allStudent.get(userUsing).setLinkOfAvatar(path);
+            ManageData.getManageData().setTemporaryAvatar(newPath);
+            
+            try{
+                ManageData.getManageData().copyFileUsingChannel(file, file2);
+            }
+            catch (Exception e){
+                System.out.println("");
+            }
+            //String userUsing = ManageData.getManageData().getWho_is_using_this_program();
+            //ManageData.getManageData().allStudent.get(userUsing).setLinkOfAvatar(path);
             
             //Save
-            ManageData.getManageData().saveAllStudent();
+            //ManageData.getManageData().saveAllStudent();
         }
     }//GEN-LAST:event_btnUploadActionPerformed
 
@@ -479,6 +493,14 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
         //Edit password
         String password = String.valueOf(passwordField.getPassword());
         ManageData.getManageData().allStudent.get(username).setPassword(password);
+        
+        //Edit avatar
+        
+        String path = ManageData.getManageData().getTemporaryAvatar();
+        System.out.println(path);
+        ManageData.getManageData().allStudent.get(username).setLinkOfAvatar(path);
+        
+        
         
         ManageData.getManageData().saveAllStudent();
         

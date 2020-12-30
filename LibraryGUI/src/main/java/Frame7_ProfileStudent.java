@@ -43,6 +43,9 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
             
             textFieldImage.setIcon(ii);
             
+            File file = new File(linkAvatar);
+            File file2 = new File("src/main/java/avatar/" + file.getName());
+            String newPath = file2.getAbsolutePath();
             
         }
     }
