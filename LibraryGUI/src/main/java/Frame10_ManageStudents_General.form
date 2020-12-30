@@ -241,37 +241,12 @@
                       <Font name="Avenir" size="16" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor" postCode="jTable1.getTableHeader().setBackground(new Color(255, 25, 255));">
-                      <Table columnCount="5" rowCount="4">
-                        <Column editable="true" title="Student ID" type="java.lang.Object">
-                          <Data value="abc"/>
-                          <Data value="xyz"/>
-                          <Data value="null"/>
-                          <Data value="null"/>
-                        </Column>
-                        <Column editable="true" title="Name" type="java.lang.Object">
-                          <Data value="Minh"/>
-                          <Data value=""/>
-                          <Data value="null"/>
-                          <Data value="null"/>
-                        </Column>
-                        <Column editable="true" title="Phone" type="java.lang.Object">
-                          <Data value="456"/>
-                          <Data value=""/>
-                          <Data value="null"/>
-                          <Data value="null"/>
-                        </Column>
-                        <Column editable="true" title="Username" type="java.lang.Object">
-                          <Data value="ert"/>
-                          <Data value=""/>
-                          <Data value="null"/>
-                          <Data value="null"/>
-                        </Column>
-                        <Column editable="true" title="Overdue" type="java.lang.Object">
-                          <Data value="12"/>
-                          <Data value=""/>
-                          <Data value="null"/>
-                          <Data value="null"/>
-                        </Column>
+                      <Table columnCount="5" rowCount="0">
+                        <Column editable="true" title="Student ID" type="java.lang.Object"/>
+                        <Column editable="true" title="Name" type="java.lang.Object"/>
+                        <Column editable="true" title="Phone" type="java.lang.Object"/>
+                        <Column editable="true" title="Username" type="java.lang.Object"/>
+                        <Column editable="true" title="Overdue" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

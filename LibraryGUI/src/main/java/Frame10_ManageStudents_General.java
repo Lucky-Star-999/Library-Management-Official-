@@ -37,11 +37,12 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
         jTable1.getTableHeader().setDefaultRenderer(headerCellRenderer);
         
         
-        /*DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         
+        model.setRowCount(0);
         for(Student value: ManageData.getManageData().allStudent.values()){
             model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), "No" } );
-        }*/
+        }
     }
 
     /**
@@ -159,10 +160,7 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"abc", "Minh", "456", "ert", "12"},
-                {"xyz", "", "", "", ""},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Student ID", "Name", "Phone", "Username", "Overdue"
