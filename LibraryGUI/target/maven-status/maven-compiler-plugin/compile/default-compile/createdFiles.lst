@@ -19,6 +19,9 @@ Frame15_EditProfileStudent$4.class
 Frame16_Book_Manager$2.class
 Frame12_ChangeFine$4.class
 Frame11_ManageStudents_Detail$3.class
+Frame17_PasswordChangeStudent$6.class
+Frame10_ManageStudents_General$11.class
+Frame17_PasswordChangeStudent$2.class
 Frame2_LoginManager$7.class
 Frame16_Book_Manager$14.class
 Frame8_EditProfile$7.class
@@ -27,6 +30,8 @@ Frame5_RegisterStudent$7.class
 Frame7_ProfileStudent$9.class
 Frame8_EditProfile$1.class
 Frame15_EditProfileStudent$5.class
+Frame17_PasswordChangeStudent$1.class
+Frame17_PasswordChangeStudent$7.class
 Frame11_ManageStudents_Detail$2.class
 Frame2_LoginManager$6.class
 Frame14_Book_Student$3.class
@@ -47,6 +52,7 @@ Frame8_EditProfile$2.class
 Frame15_EditProfileStudent$3.class
 Frame16_Book_Manager$3.class
 Frame2_LoginManager$5.class
+Frame17_PasswordChangeStudent$3.class
 Frame12_ChangeFine.class
 Frame11_ManageStudents_Detail$4.class
 Frame14_Book_Student$1.class
@@ -67,6 +73,7 @@ Frame15_EditProfileStudent$1.class
 Frame7_ProfileStudent$7.class
 Frame16_Book_Manager$6.class
 Frame1_Intro.class
+Frame17_PasswordChangeStudent$5.class
 Frame8_EditProfile$4.class
 Frame10_ManageStudents_General$3.class
 Frame4_RegisterManager$5.class
@@ -76,6 +83,7 @@ Frame7_ProfileStudent$6.class
 Frame15_EditProfileStudent$2.class
 Frame9_PasswordChange.class
 Frame5_RegisterStudent$3.class
+Frame17_PasswordChangeStudent$4.class
 Frame12_ChangeFine$6.class
 Frame7_ProfileStudent$1.class
 Frame13_SeeBorrowedBooks.class
@@ -139,6 +147,7 @@ Frame2_LoginManager$8.class
 Frame7_ProfileStudent$2.class
 Frame6_ProfileManager$2.class
 Frame15_EditProfileStudent$11.class
+Frame17_PasswordChangeStudent.class
 Frame2_LoginManager.class
 Frame9_PasswordChange$5.class
 Frame10_ManageStudents_General$9.class

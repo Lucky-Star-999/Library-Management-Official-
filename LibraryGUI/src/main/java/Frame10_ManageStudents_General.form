@@ -45,7 +45,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="a" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -54,14 +54,14 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="a" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel1">
+        <Container class="javax.swing.JPanel" name="a">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -84,7 +84,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="btnLibrary1" min="-2" pref="32" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField_Search" max="32767" attributes="0"/>
+                              <Component id="textFieldSearch" max="32767" attributes="0"/>
                           </Group>
                           <Component id="jSeparator1" min="-2" pref="270" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" alignment="1" pref="672" max="32767" attributes="0"/>
@@ -110,7 +110,7 @@
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnLibrary1" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="jTextField_Search" min="-2" max="-2" attributes="0"/>
+                          <Component id="textFieldSearch" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                       <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
@@ -136,7 +136,7 @@
                 <Property name="text" type="java.lang.String" value="Manage Students"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_Search">
+            <Component class="javax.swing.JTextField" name="textFieldSearch">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Avenir Next" size="20" style="0"/>
@@ -150,9 +150,9 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTextField_SearchMouseClicked"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_SearchActionPerformed"/>
-                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField_SearchKeyPressed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textFieldSearchMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldSearchActionPerformed"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textFieldSearchKeyPressed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnManage">
@@ -219,6 +219,7 @@
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnLibrary1MouseEntered"/>
                 <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnLibrary1MouseExited"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLibrary1ActionPerformed"/>
               </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane1">

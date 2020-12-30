@@ -12,6 +12,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.io.File;
+import javax.swing.ImageIcon;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -43,6 +47,20 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
         for(Student value: ManageData.getManageData().allStudent.values()){
             model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), "No" } );
         }
+        
+        
+        //Set image of button
+        String linkImageButton1 = "src/main/java/com/mycompany/librarygui/Library_Icons/icons8-back_1.png";
+        Image im = Toolkit.getDefaultToolkit().createImage(linkImageButton1);
+        im = im.getScaledInstance(btnBack.getWidth(), btnBack.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon ii = new ImageIcon(im);
+        btnBack.setIcon(ii);
+        
+        String linkImageButton2 = "src/main/java/com/mycompany/librarygui/Library_Icons/icons8-search_1.png";
+        Image im2 = Toolkit.getDefaultToolkit().createImage(linkImageButton2);
+        im2 = im2.getScaledInstance(btnLibrary1.getWidth(), btnLibrary1.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon ii2 = new ImageIcon(im2);
+        btnLibrary1.setIcon(ii2);
     }
 
     /**
@@ -55,9 +73,9 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        a = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField_Search = new javax.swing.JTextField();
+        textFieldSearch = new javax.swing.JTextField();
         btnManage = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         btnLibrary = new javax.swing.JButton();
@@ -70,29 +88,29 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 113, 164));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        a.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Avenir Next", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Manage Students");
 
-        jTextField_Search.setFont(new java.awt.Font("Avenir Next", 0, 20)); // NOI18N
-        jTextField_Search.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField_Search.setText("Search");
-        jTextField_Search.setBorder(null);
-        jTextField_Search.addMouseListener(new java.awt.event.MouseAdapter() {
+        textFieldSearch.setFont(new java.awt.Font("Avenir Next", 0, 20)); // NOI18N
+        textFieldSearch.setForeground(new java.awt.Color(102, 102, 102));
+        textFieldSearch.setText("Search");
+        textFieldSearch.setBorder(null);
+        textFieldSearch.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTextField_SearchMouseClicked(evt);
+                textFieldSearchMouseClicked(evt);
             }
         });
-        jTextField_Search.addActionListener(new java.awt.event.ActionListener() {
+        textFieldSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_SearchActionPerformed(evt);
+                textFieldSearchActionPerformed(evt);
             }
         });
-        jTextField_Search.addKeyListener(new java.awt.event.KeyAdapter() {
+        textFieldSearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField_SearchKeyPressed(evt);
+                textFieldSearchKeyPressed(evt);
             }
         });
 
@@ -155,6 +173,11 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
                 btnLibrary1MouseExited(evt);
             }
         });
+        btnLibrary1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLibrary1ActionPerformed(evt);
+            }
+        });
 
         jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTable1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
@@ -172,48 +195,48 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
         jTable1.setShowGrid(false);
         jScrollPane1.setViewportView(jTable1);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout aLayout = new javax.swing.GroupLayout(a);
+        a.setLayout(aLayout);
+        aLayout.setHorizontalGroup(
+            aLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(aLayout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(aLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(aLayout.createSequentialGroup()
                         .addComponent(btnManage, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnLibrary, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(aLayout.createSequentialGroup()
                         .addComponent(btnLibrary1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField_Search))
+                        .addComponent(textFieldSearch))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(100, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        aLayout.setVerticalGroup(
+            aLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(aLayout.createSequentialGroup()
+                .addGroup(aLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(aLayout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(aLayout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(40, 40, 40)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(aLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnLibrary1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField_Search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(1, 1, 1)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(aLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnManage, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLibrary, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50))
@@ -225,14 +248,14 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(100, 100, 100))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(100, 100, 100))
         );
 
@@ -250,9 +273,9 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField_SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_SearchActionPerformed
+    private void textFieldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_SearchActionPerformed
+    }//GEN-LAST:event_textFieldSearchActionPerformed
 
     private void btnLibraryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLibraryMouseEntered
         // TODO add your handling code here:
@@ -288,20 +311,25 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnBackMouseExited
 
-    private void jTextField_SearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField_SearchMouseClicked
+    private void textFieldSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldSearchMouseClicked
         // TODO add your handling code here:
-        jTextField_Search.setText("");
-        jTextField_Search.setForeground(new Color(0, 0, 0));
-    }//GEN-LAST:event_jTextField_SearchMouseClicked
+        textFieldSearch.setText("");
+        textFieldSearch.setForeground(new Color(0, 0, 0));
+    }//GEN-LAST:event_textFieldSearchMouseClicked
 
-    private void jTextField_SearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_SearchKeyPressed
+    private void textFieldSearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldSearchKeyPressed
         // TODO add your handling code here:
         // Nhấn Enter để search
         
-    }//GEN-LAST:event_jTextField_SearchKeyPressed
+    }//GEN-LAST:event_textFieldSearchKeyPressed
 
     private void btnLibraryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibraryActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        model.setRowCount(0);
+        for(Student value: ManageData.getManageData().allStudent.values()){
+            model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), "No" } );
+        }
     }//GEN-LAST:event_btnLibraryActionPerformed
 
     private void btnLibrary1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLibrary1MouseExited
@@ -318,6 +346,35 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
         Frame6_ProfileManager frame6 = new Frame6_ProfileManager();
         frame6.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnLibrary1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibrary1ActionPerformed
+        // TODO add your handling code here:
+        String search = textFieldSearch.getText();
+        
+        //Searching.getSearching().translateToSearchStudentByName(search);
+        //Searching.getSearching().translateToSearchStudentById(search);
+        
+        //New methods
+        Searching.getSearching().mergeSearchStudent(search);
+        
+        
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        
+        model.setRowCount(0);
+        
+        /*for(Student value: Searching.getSearching().searchStudentByName.values()){
+            model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), "No" } );
+        }
+
+        for(Student value: Searching.getSearching().searchStudentById.values()){
+            model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), "No" } );
+        }*/
+        
+        for(Student value: Searching.getSearching().mergeSearch.values()){
+            model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), "No" } );
+        }
+     
+    }//GEN-LAST:event_btnLibrary1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -355,16 +412,16 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel a;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnLibrary;
     private javax.swing.JButton btnLibrary1;
     private javax.swing.JButton btnManage;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField_Search;
+    private javax.swing.JTextField textFieldSearch;
     // End of variables declaration//GEN-END:variables
 }

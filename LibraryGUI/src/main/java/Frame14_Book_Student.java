@@ -5,7 +5,10 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
-
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.io.File;
+import javax.swing.ImageIcon;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -34,7 +37,18 @@ public class Frame14_Book_Student extends javax.swing.JFrame {
         
         
         
+        //Set image of button
+        String linkImageButton1 = "src/main/java/com/mycompany/librarygui/Library_Icons/icons8-back_1.png";
+        Image im = Toolkit.getDefaultToolkit().createImage(linkImageButton1);
+        im = im.getScaledInstance(btnBack.getWidth(), btnBack.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon ii = new ImageIcon(im);
+        btnBack.setIcon(ii);
         
+        String linkImageButton2 = "src/main/java/com/mycompany/librarygui/Library_Icons/icons8-search_1.png";
+        Image im2 = Toolkit.getDefaultToolkit().createImage(linkImageButton2);
+        im2 = im2.getScaledInstance(btnSearch.getWidth(), btnSearch.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon ii2 = new ImageIcon(im2);
+        btnSearch.setIcon(ii2);
 
     }
 

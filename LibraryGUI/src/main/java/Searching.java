@@ -25,6 +25,10 @@ public class Searching {
     //key = username, value = Student
     HashMap<String, Student> searchStudentById = new HashMap<>();
     
+    
+    //Merge search by ID and name of Student
+    HashMap<String, Student> mergeSearch = new HashMap<>();
+    
     //Search info of book by title
     //key = idBook, value = Book
     HashMap<String, Book> searchBookByName = new HashMap<>();
@@ -80,6 +84,16 @@ public class Searching {
         }
     }
     
+    
+    
+    //Merge search ID and name of Student
+    public void mergeSearchStudent(String str){
+        this.mergeSearch.clear();
+        translateToSearchStudentByName(str);
+        translateToSearchStudentById(str);
+        mergeSearch.putAll(searchStudentByName);
+        mergeSearch.putAll(searchStudentById);
+    }
     
     
     //Search book for name
