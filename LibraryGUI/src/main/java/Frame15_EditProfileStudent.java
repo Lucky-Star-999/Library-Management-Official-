@@ -7,6 +7,9 @@ import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -394,14 +397,30 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
         String userUsing = ManageData.getManageData().getWho_is_using_this_program();
-        ManageData.getManageData().allStudent.get(userUsing).setLinkOfAvatar(null);
-        ManageData.getManageData().saveAllStudent();
-        String linkAvatar = ManageData.getManageData().allStudent.get(userUsing).getLinkOfAvatar();
+        //ManageData.getManageData().allStudent.get(userUsing).setLinkOfAvatar(null);
+        String oldPath = ManageData.getManageData().allStudent.get(userUsing).getLinkOfAvatar();
+
+            ManageData.getManageData().setTemporaryAvatar(null);
+        //Save ...
+        //ManageData.getManageData().saveAllStudent();
+        
+            String linkAvatar = null;
+            Image im = Toolkit.getDefaultToolkit().createImage(linkAvatar);
+            im = im.getScaledInstance(textFieldImage.getWidth(), textFieldImage.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon ii = new ImageIcon(im);
+            textFieldImage.setText("");
+            textFieldImage.setIcon(ii);
+  
+        //ManageData.getManageData().setTemporaryAvatar(null);
+        //Save ...
+        //ManageData.getManageData().saveAllStudent();
+        
+        /*String linkAvatar = null;
         Image im = Toolkit.getDefaultToolkit().createImage(linkAvatar);
         im = im.getScaledInstance(textFieldImage.getWidth(), textFieldImage.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon ii = new ImageIcon(im);
         textFieldImage.setText("");
-        textFieldImage.setIcon(ii);
+        textFieldImage.setIcon(ii);*/
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnSaveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaveMouseEntered
@@ -495,12 +514,24 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
         ManageData.getManageData().allStudent.get(username).setPassword(password);
         
         //Edit avatar
-        
         String path = ManageData.getManageData().getTemporaryAvatar();
-        System.out.println(path);
+        String oldPath = ManageData.getManageData().allStudent.get(username).getLinkOfAvatar();
+        
+        if (path==null && oldPath!=null){
+            if (path==null && !oldPath.equals("null")){
+                try {
+                    if (oldPath!=null){
+                        Files.delete(Paths.get(oldPath));
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+ 
+
+        
         ManageData.getManageData().allStudent.get(username).setLinkOfAvatar(path);
-        
-        
         
         ManageData.getManageData().saveAllStudent();
         
