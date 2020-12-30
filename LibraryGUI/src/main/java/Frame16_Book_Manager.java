@@ -114,7 +114,7 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
         });
 
         btnBack.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
-        btnBack.setIcon(new javax.swing.ImageIcon("/Users/doquangminh/Documents/GitHub/Library-Management-Official-/LibraryGUI/src/main/java/com/mycompany/librarygui/Library_Icons/icons8-back_1.png")); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/librarygui/Library_Icons/icons8-search_1.png"))); // NOI18N
         btnBack.setBorderPainted(false);
         btnBack.setContentAreaFilled(false);
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -149,6 +149,7 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
 
         btnSearch.setFont(new java.awt.Font("Avenir Next", 1, 10)); // NOI18N
         btnSearch.setForeground(new java.awt.Color(153, 153, 153));
+        btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/librarygui/Library_Icons/icons8-search_1.png"))); // NOI18N
         btnSearch.setBorder(null);
         btnSearch.setBorderPainted(false);
         btnSearch.setContentAreaFilled(false);

@@ -64,6 +64,7 @@ public class Frame13_SeeBorrowedBooks extends javax.swing.JFrame {
         jLabel1.setText("0.00");
 
         btnBack.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/librarygui/Library_Icons/icons8-back_1.png"))); // NOI18N
         btnBack.setBorderPainted(false);
         btnBack.setContentAreaFilled(false);
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
