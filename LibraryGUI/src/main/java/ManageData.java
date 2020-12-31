@@ -218,7 +218,8 @@ public class ManageData {
     
     //Save all information of all the books
     public void saveAllBook(){
-	String path = new File("src\\databaseSaving\\All Books.txt").getAbsolutePath();
+	//String path = new File("src\\databaseSaving\\All Books.txt").getAbsolutePath();
+        String path = new File("src/main/java/database/All Books.txt").getAbsolutePath();
         
         try (FileWriter fstream = new FileWriter(path);
 	    BufferedWriter info = new BufferedWriter(fstream)) {
@@ -241,7 +242,8 @@ public class ManageData {
     
     //Load information of all the books
     public void loadAllBook(){
-        String path = new File("src\\databaseSaving\\All Books.txt").getAbsolutePath();;
+        //String path = new File("src\\databaseSaving\\All Books.txt").getAbsolutePath();
+        String path = new File("src/main/java/database/All Books.txt").getAbsolutePath();
         try {
             List<String> content = Files.readAllLines(Paths.get(path), StandardCharsets.UTF_8);
             String id = "0";

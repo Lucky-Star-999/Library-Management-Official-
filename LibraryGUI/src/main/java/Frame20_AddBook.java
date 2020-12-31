@@ -8,6 +8,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -50,13 +51,13 @@ public class Frame20_AddBook extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnAddBook = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        textFieldTitle = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        textFieldAuthor = new javax.swing.JTextField();
+        textFieldId = new javax.swing.JTextField();
+        textFieldCategory = new javax.swing.JTextField();
         btnAddBook1 = new javax.swing.JButton();
         btnAddBook2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -106,12 +107,12 @@ public class Frame20_AddBook extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField1.setText(" ");
-        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        textFieldTitle.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
+        textFieldTitle.setText(" ");
+        textFieldTitle.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        textFieldTitle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                textFieldTitleActionPerformed(evt);
             }
         });
 
@@ -124,30 +125,30 @@ public class Frame20_AddBook extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Avenir", 1, 24)); // NOI18N
         jLabel5.setText("Title");
 
-        jTextField2.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField2.setText(" ");
-        jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        textFieldAuthor.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
+        textFieldAuthor.setText(" ");
+        textFieldAuthor.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        textFieldAuthor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                textFieldAuthorActionPerformed(evt);
             }
         });
 
-        jTextField3.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField3.setText(" ");
-        jTextField3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        textFieldId.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
+        textFieldId.setText(" ");
+        textFieldId.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        textFieldId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                textFieldIdActionPerformed(evt);
             }
         });
 
-        jTextField4.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField4.setText(" ");
-        jTextField4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        textFieldCategory.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
+        textFieldCategory.setText(" ");
+        textFieldCategory.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        textFieldCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                textFieldCategoryActionPerformed(evt);
             }
         });
 
@@ -196,11 +197,11 @@ public class Frame20_AddBook extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel2)
                                     .addGap(60, 60, 60)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(textFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel5)
                                     .addGap(99, 99, 99)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(textFieldTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGap(59, 59, 59)
@@ -209,11 +210,11 @@ public class Frame20_AddBook extends javax.swing.JFrame {
                                             .addComponent(btnAddBook)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(textFieldAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(48, 48, 48)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(textFieldCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(100, 100, 100)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -236,19 +237,19 @@ public class Frame20_AddBook extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(40, 40, 40)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textFieldCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(42, 42, 42)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textFieldTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(37, 37, 37)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(textFieldAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -313,6 +314,16 @@ public class Frame20_AddBook extends javax.swing.JFrame {
 
     private void btnAddBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddBookActionPerformed
         // TODO add your handling code here:
+        String id = textFieldId.getText();
+        ManageData.getManageData().allBook.put(id, new Book());
+        ManageData.getManageData().allBook.get(id).setAuthor(textFieldAuthor.getText());
+        ManageData.getManageData().allBook.get(id).setCategory(textFieldCategory.getText());
+        ManageData.getManageData().allBook.get(id).setIdBook(id);
+        ManageData.getManageData().allBook.get(id).setTitle(textFieldTitle.getText());
+        ManageData.getManageData().allBook.get(id).setAvailable("Yes");
+        
+        ManageData.getManageData().saveAllBook();
+        JOptionPane.showMessageDialog(null, "Add book successfully!\nPress \"Cancel\" to return");
     }//GEN-LAST:event_btnAddBookActionPerformed
 
     private void btnAddBookMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddBookMouseExited
@@ -327,21 +338,21 @@ public class Frame20_AddBook extends javax.swing.JFrame {
         btnAddBook.setForeground(new Color(255, 255, 255));
     }//GEN-LAST:event_btnAddBookMouseEntered
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void textFieldTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldTitleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_textFieldTitleActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void textFieldAuthorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldAuthorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_textFieldAuthorActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void textFieldIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_textFieldIdActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void textFieldCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldCategoryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_textFieldCategoryActionPerformed
 
     private void btnAddBook1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddBook1MouseEntered
         // TODO add your handling code here:
@@ -415,9 +426,9 @@ public class Frame20_AddBook extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField textFieldAuthor;
+    private javax.swing.JTextField textFieldCategory;
+    private javax.swing.JTextField textFieldId;
+    private javax.swing.JTextField textFieldTitle;
     // End of variables declaration//GEN-END:variables
 }

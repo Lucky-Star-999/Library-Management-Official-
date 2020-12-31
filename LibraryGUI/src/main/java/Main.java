@@ -54,6 +54,12 @@ public class Main {
             ManageData.getManageData().loadAllStudent();
         }
         
+        File tmpDir3 = new File("src/main/java/database/All Books.txt");
+        boolean exists3 = tmpDir3.exists();
+        if (exists3){
+            ManageData.getManageData().loadAllBook();
+        }
+        
         
         //Change the variable to test any frame
         JFrame frameTest = new JFrame();

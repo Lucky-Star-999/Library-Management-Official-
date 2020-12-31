@@ -49,6 +49,16 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
         im2 = im2.getScaledInstance(btnSearch.getWidth(), btnSearch.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon ii2 = new ImageIcon(im2);
         btnSearch.setIcon(ii2);
+        
+        
+        //Set table show
+        ManageData.getManageData().setBook_choosen(null);
+        
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        model.setRowCount(0);
+        for(Book value: ManageData.getManageData().allBook.values()){
+            model.addRow( new Object[]{ value.getIdBook(), value.getCategory(), value.getTitle(), value.getAuthor(), value.getAvailable() } );
+        }
 
     }
 
