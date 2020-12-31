@@ -434,6 +434,25 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
+        int i = jTable1.getSelectedRow();
+        
+        
+        
+        if (i != -1){
+            String id = String.valueOf(jTable1.getValueAt(i, 0));
+            ManageData.getManageData().setBook_choosen(id);
+            ManageData.getManageData().allBook.remove(id);
+            ManageData.getManageData().saveAllBook();
+        
+            ManageData.getManageData().setBook_choosen(null);
+        }
+        
+        
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        model.setRowCount(0);
+        for(Book value: ManageData.getManageData().allBook.values()){
+            model.addRow( new Object[]{ value.getIdBook(), value.getCategory(), value.getTitle(), value.getAuthor(), value.getAvailable() } );
+        }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
