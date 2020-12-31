@@ -111,7 +111,6 @@ public class Frame20_AddBook extends javax.swing.JFrame {
         });
 
         textFieldTitle.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        textFieldTitle.setText(" ");
         textFieldTitle.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         textFieldTitle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,7 +128,6 @@ public class Frame20_AddBook extends javax.swing.JFrame {
         jLabel5.setText("Title");
 
         textFieldAuthor.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        textFieldAuthor.setText(" ");
         textFieldAuthor.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         textFieldAuthor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,7 +136,6 @@ public class Frame20_AddBook extends javax.swing.JFrame {
         });
 
         textFieldId.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        textFieldId.setText(" ");
         textFieldId.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         textFieldId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,7 +144,6 @@ public class Frame20_AddBook extends javax.swing.JFrame {
         });
 
         textFieldCategory.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        textFieldCategory.setText(" ");
         textFieldCategory.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         textFieldCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

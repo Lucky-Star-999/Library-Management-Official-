@@ -56,10 +56,9 @@ public class Frame18_ForgotPassword extends javax.swing.JFrame {
         jLabel1.setText("Forgot Your Password?");
 
         jLabel2.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
-        jLabel2.setText("Email");
+        jLabel2.setText("Username");
 
         jTextField1.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField1.setText(" ");
         jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,14 +97,13 @@ public class Frame18_ForgotPassword extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("Phone number");
+        jLabel3.setText("Email");
 
         jLabel4.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel4.setText("New Password");
+        jLabel4.setText("Phone number");
 
         jTextField2.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField2.setText(" ");
         jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +112,6 @@ public class Frame18_ForgotPassword extends javax.swing.JFrame {
         });
 
         jTextField3.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField3.setText(" ");
         jTextField3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,10 +126,9 @@ public class Frame18_ForgotPassword extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel6.setText("Confirm Password");
+        jLabel6.setText("Your Password");
 
         jTextField4.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField4.setText(" ");
         jTextField4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

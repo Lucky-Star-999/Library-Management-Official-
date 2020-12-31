@@ -54,7 +54,6 @@ public class Frame12_ChangeFine extends javax.swing.JFrame {
         jLabel2.setText("Current Fine");
 
         jTextField1.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField1.setText(" ");
         jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +100,6 @@ public class Frame12_ChangeFine extends javax.swing.JFrame {
         jLabel3.setText("New Fine");
 
         jTextField2.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField2.setText(" ");
         jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

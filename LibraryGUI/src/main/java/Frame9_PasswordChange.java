@@ -56,7 +56,6 @@ public class Frame9_PasswordChange extends javax.swing.JFrame {
         jLabel2.setText("Current Password");
 
         jTextField1.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField1.setText(" ");
         jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +102,6 @@ public class Frame9_PasswordChange extends javax.swing.JFrame {
         jLabel4.setText("Confirm Password");
 
         jTextField2.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField2.setText(" ");
         jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +110,6 @@ public class Frame9_PasswordChange extends javax.swing.JFrame {
         });
 
         jTextField3.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField3.setText(" ");
         jTextField3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,10 +201,6 @@ public class Frame9_PasswordChange extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void btnSaveChangesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaveChangesMouseEntered
         // TODO add your handling code here:
         btnSaveChanges.setBackground(new Color(0, 64, 221));
@@ -242,6 +235,10 @@ public class Frame9_PasswordChange extends javax.swing.JFrame {
     private void btnSaveChangesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveChangesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSaveChangesActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments

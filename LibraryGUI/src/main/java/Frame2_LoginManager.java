@@ -264,6 +264,9 @@ public class Frame2_LoginManager extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        Frame18_ForgotPassword frame18 = new Frame18_ForgotPassword();
+        frame18.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
