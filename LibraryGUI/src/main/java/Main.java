@@ -35,6 +35,11 @@ public class Main {
         Frame15_EditProfileStudent frame15 = new Frame15_EditProfileStudent();
         Frame16_Book_Manager frame16 = new Frame16_Book_Manager();
         Frame17_PasswordChangeStudent frame17 = new Frame17_PasswordChangeStudent();
+        Frame18_ForgotPassword frame18 = new Frame18_ForgotPassword();
+        Frame19_ForgotPassword_Student frame19 = new Frame19_ForgotPassword_Student();
+        Frame20_AddBook frame20 = new Frame20_AddBook();
+                
+                
                 
         
         File tmpDir = new File("src/main/java/database/All Managers.txt");

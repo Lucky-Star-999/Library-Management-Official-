@@ -342,6 +342,9 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
 
     private void btnLibraryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibraryActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        Frame16_Book_Manager frame16 = new Frame16_Book_Manager();
+        frame16.setVisible(true);
     }//GEN-LAST:event_btnLibraryActionPerformed
 
     private void btnManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageActionPerformed

@@ -294,6 +294,9 @@ public class Frame20_AddBook extends javax.swing.JFrame {
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        Frame16_Book_Manager frame16 = new Frame16_Book_Manager();
+        frame16.setVisible(true);
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnCancelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseExited

@@ -390,12 +390,15 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        Frame7_ProfileStudent frame7 = new Frame7_ProfileStudent();
-        frame7.setVisible(true);
+        Frame6_ProfileManager frame6 = new Frame6_ProfileManager();
+        frame6.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnAddNewBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNewBookActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        Frame20_AddBook frame20 = new Frame20_AddBook();
+        frame20.setVisible(true);
     }//GEN-LAST:event_btnAddNewBookActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
