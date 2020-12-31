@@ -41,6 +41,28 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         im = im.getScaledInstance(btnBack.getWidth(), btnBack.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon ii = new ImageIcon(im);
         btnBack.setIcon(ii);
+        
+        
+        //Set table
+        if (ManageData.getManageData().getUsername_choosen() != null){
+            String userChoosen = ManageData.getManageData().getUsername_choosen();
+            labelName.setText(ManageData.getManageData().allStudent.get(userChoosen).getFullName());
+            labelId.setText(ManageData.getManageData().allStudent.get(userChoosen).getIdStudent());
+        }
+        
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        
+        String username = ManageData.getManageData().getUsername_choosen();
+        
+        //System.out.println(ManageData.getManageData().getUsername_choosen());
+        model.setRowCount(0);
+        for(Book value: ManageData.getManageData().allBook.values()){
+                if (value.getWho_is_borrowing_this_book()!=null){
+                    if (value.getWho_is_borrowing_this_book().equals(username)){
+                        model.addRow( new Object[]{ value.getIdBook(), value.getTitle(), value.getStartBorrowed(), value.getEndBorrowedPrediction() } );
+                    }
+                }
+            }
 
     }
 
@@ -62,8 +84,8 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        labelName = new javax.swing.JLabel();
+        labelId = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,11 +158,11 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
         jLabel3.setText("ID:");
 
-        jLabel4.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
-        jLabel4.setText("Đỗ Quang Minh");
+        labelName.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
+        labelName.setText("Đỗ Quang Minh");
 
-        jLabel5.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
-        jLabel5.setText("ITITIU19028");
+        labelId.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
+        labelId.setText("ITITIU19028");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,11 +176,11 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel4)
+                        .addComponent(labelName)
                         .addGap(62, 62, 62)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel5))
+                        .addComponent(labelId))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnChangeFine, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -175,8 +197,8 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
+                    .addComponent(labelName)
+                    .addComponent(labelId))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
@@ -292,11 +314,11 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel labelId;
+    private javax.swing.JLabel labelName;
     // End of variables declaration//GEN-END:variables
 }

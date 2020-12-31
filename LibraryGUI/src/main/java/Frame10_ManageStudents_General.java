@@ -124,6 +124,11 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
                 btnManageMouseExited(evt);
             }
         });
+        btnManage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageActionPerformed(evt);
+            }
+        });
 
         btnBack.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
         btnBack.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\Library-Management-Official-\\LibraryGUI\\src\\main\\java\\com\\mycompany\\librarygui\\Library_Icons\\icons8-back_1.png")); // NOI18N
@@ -375,6 +380,19 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
         }
      
     }//GEN-LAST:event_btnLibrary1ActionPerformed
+
+    private void btnManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageActionPerformed
+        // TODO add your handling code here:
+        int i = jTable1.getSelectedRow();
+        if (i != -1){
+            String user = String.valueOf(jTable1.getValueAt(i, 3));
+            ManageData.getManageData().setUsername_choosen(user);
+
+            this.dispose();
+            Frame11_ManageStudents_Detail frame11 = new Frame11_ManageStudents_Detail();
+            frame11.setVisible(true);
+        }
+    }//GEN-LAST:event_btnManageActionPerformed
 
     /**
      * @param args the command line arguments
