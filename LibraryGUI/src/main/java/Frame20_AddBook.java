@@ -9,7 +9,10 @@ import java.awt.Toolkit;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-
+import javax.swing.JFileChooser;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -60,7 +63,7 @@ public class Frame20_AddBook extends javax.swing.JFrame {
         textFieldCategory = new javax.swing.JTextField();
         btnAddBook1 = new javax.swing.JButton();
         btnAddBook2 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        textFieldImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -217,7 +220,7 @@ public class Frame20_AddBook extends javax.swing.JFrame {
                                 .addComponent(textFieldCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(100, 100, 100)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textFieldImage, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnAddBook1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -250,7 +253,7 @@ public class Frame20_AddBook extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(textFieldAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldImage, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddBook1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -322,6 +325,9 @@ public class Frame20_AddBook extends javax.swing.JFrame {
         ManageData.getManageData().allBook.get(id).setTitle(textFieldTitle.getText());
         ManageData.getManageData().allBook.get(id).setAvailable("Yes");
         
+        String path = ManageData.getManageData().getTemporaryAvatar();
+        ManageData.getManageData().allBook.get(id).setLink(path);
+        
         ManageData.getManageData().saveAllBook();
         JOptionPane.showMessageDialog(null, "Add book successfully!\nPress \"Cancel\" to return");
     }//GEN-LAST:event_btnAddBookActionPerformed
@@ -364,6 +370,34 @@ public class Frame20_AddBook extends javax.swing.JFrame {
 
     private void btnAddBook1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddBook1ActionPerformed
         // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f = chooser.getSelectedFile();
+        if (f!=null){
+            String path = f.getAbsolutePath();       
+            
+            //Create image
+            Image im = Toolkit.getDefaultToolkit().createImage(path);
+            im = im.getScaledInstance(textFieldImage.getWidth(), textFieldImage.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon ii = new ImageIcon(im);
+            
+            textFieldImage.setText("");
+            textFieldImage.setIcon(ii);
+            
+            
+            File file = new File(path);
+            String newPath = "src/main/java/imageBook/" + file.getName();
+            File file2 = new File(newPath);
+            String userUsing = ManageData.getManageData().getWho_is_using_this_program();
+            ManageData.getManageData().setTemporaryAvatar(newPath);
+            
+            try{
+                ManageData.getManageData().copyFileUsingChannel(file, file2);
+            }
+            catch (Exception e){
+                System.out.println("");
+            }
+        }
     }//GEN-LAST:event_btnAddBook1ActionPerformed
 
     private void btnAddBook2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddBook2MouseEntered
@@ -376,6 +410,20 @@ public class Frame20_AddBook extends javax.swing.JFrame {
 
     private void btnAddBook2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddBook2ActionPerformed
         // TODO add your handling code here:
+        //String userUsing = ManageData.getManageData().getWho_is_using_this_program();
+        //ManageData.getManageData().allStudent.get(userUsing).setLinkOfAvatar(null);
+        //String oldPath = ManageData.getManageData().allManager.get(userUsing).getLinkOfAvatar();
+
+        ManageData.getManageData().setTemporaryAvatar(null);
+        //Save ...
+        //ManageData.getManageData().saveAllStudent();
+        
+            String linkAvatar = null;
+            Image im = Toolkit.getDefaultToolkit().createImage(linkAvatar);
+            im = im.getScaledInstance(textFieldImage.getWidth(), textFieldImage.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon ii = new ImageIcon(im);
+            textFieldImage.setText("");
+            textFieldImage.setIcon(ii);
     }//GEN-LAST:event_btnAddBook2ActionPerformed
 
     /**
@@ -423,12 +471,12 @@ public class Frame20_AddBook extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField textFieldAuthor;
     private javax.swing.JTextField textFieldCategory;
     private javax.swing.JTextField textFieldId;
+    private javax.swing.JLabel textFieldImage;
     private javax.swing.JTextField textFieldTitle;
     // End of variables declaration//GEN-END:variables
 }
