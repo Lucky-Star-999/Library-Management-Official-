@@ -29,6 +29,7 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
             textFieldFullName.setText(ManageData.getManageData().allStudent.get(userIsUsing).getFullName());
             textFieldEmail.setText(ManageData.getManageData().allStudent.get(userIsUsing).getEmail());
             textFieldPhone.setText(ManageData.getManageData().allStudent.get(userIsUsing).getPhone());
+            textFieldId.setText(ManageData.getManageData().allStudent.get(userIsUsing).getIdStudent());
             
             String linkAvatar = ManageData.getManageData().allStudent.get(userIsUsing).getLinkOfAvatar();
             
@@ -70,7 +71,7 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
         textFieldEmail = new javax.swing.JTextField();
         textFieldPhone = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        textFieldID = new javax.swing.JTextField();
+        textFieldId = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -194,13 +195,13 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
         jLabel6.setText("ID:");
 
-        textFieldID.setEditable(false);
-        textFieldID.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
-        textFieldID.setText("ITITIU19028");
-        textFieldID.setBorder(null);
-        textFieldID.addActionListener(new java.awt.event.ActionListener() {
+        textFieldId.setEditable(false);
+        textFieldId.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
+        textFieldId.setText("ITITIU19028");
+        textFieldId.setBorder(null);
+        textFieldId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldIDActionPerformed(evt);
+                textFieldIdActionPerformed(evt);
             }
         });
 
@@ -227,7 +228,7 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(textFieldFullName)
-                                    .addComponent(textFieldID)
+                                    .addComponent(textFieldId)
                                     .addComponent(textFieldEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
                                     .addComponent(textFieldPhone)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -253,7 +254,7 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
-                            .addComponent(textFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -364,9 +365,9 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
         btnLogOut.setForeground(new Color(0, 0, 0));
     }//GEN-LAST:event_btnLogOutMouseExited
 
-    private void textFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldIDActionPerformed
+    private void textFieldIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldIDActionPerformed
+    }//GEN-LAST:event_textFieldIdActionPerformed
 
     private void btnManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageActionPerformed
         // TODO add your handling code here:
@@ -445,7 +446,7 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField textFieldEmail;
     private javax.swing.JTextField textFieldFullName;
-    private javax.swing.JTextField textFieldID;
+    private javax.swing.JTextField textFieldId;
     private javax.swing.JLabel textFieldImage;
     private javax.swing.JTextField textFieldPhone;
     // End of variables declaration//GEN-END:variables

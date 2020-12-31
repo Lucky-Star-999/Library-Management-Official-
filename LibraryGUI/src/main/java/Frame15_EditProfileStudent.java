@@ -1,6 +1,16 @@
 
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -20,7 +30,8 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
         initComponents();
         
         //Set the default information
-        if(ManageData.getManageData().getWho_is_using_this_program()!=null){
+        String userIsUsing = ManageData.getManageData().getWho_is_using_this_program();
+        if(userIsUsing!=null){
             String username = ManageData.getManageData().getWho_is_using_this_program();
             
             String fullName = ManageData.getManageData().allStudent.get(username).getFullName();
@@ -29,11 +40,29 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
             String email = ManageData.getManageData().allStudent.get(username).getEmail();
             textFieldEmail.setText(email);
             
+            String id = ManageData.getManageData().allStudent.get(username).getIdStudent();
+            textFieldID.setText(id);
+            
             String phone = ManageData.getManageData().allStudent.get(username).getPhone();
             textFieldPhone.setText(phone);
             
             String password = ManageData.getManageData().allStudent.get(username).getPassword();
             passwordField.setText(password);
+            
+            
+            //Insert default image
+            String linkAvatar = ManageData.getManageData().allStudent.get(userIsUsing).getLinkOfAvatar();
+            
+            Image im = Toolkit.getDefaultToolkit().createImage(linkAvatar);
+            im = im.getScaledInstance(textFieldImage.getWidth(), textFieldImage.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon ii = new ImageIcon(im);
+            
+            if (linkAvatar==null){
+                textFieldImage.setText("");
+            }
+            
+            textFieldImage.setIcon(ii);
+            ManageData.getManageData().setTemporaryAvatar(linkAvatar);
         }
         
     }
@@ -53,7 +82,7 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnUpload = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        textFieldImage = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
         textFieldPhone = new javax.swing.JTextField();
@@ -68,7 +97,7 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
         btnCancel = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        textFieldFullName1 = new javax.swing.JTextField();
+        textFieldID = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,7 +146,7 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        textFieldImage.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel7.setFont(new java.awt.Font("Avenir Next", 0, 16)); // NOI18N
         jLabel7.setText("PHONE");
@@ -202,12 +231,12 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Avenir Next", 0, 16)); // NOI18N
         jLabel11.setText("STUDENT ID");
 
-        textFieldFullName1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
-        textFieldFullName1.setText(" ITITIU19028");
-        textFieldFullName1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        textFieldFullName1.addActionListener(new java.awt.event.ActionListener() {
+        textFieldID.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
+        textFieldID.setText(" ITITIU19028");
+        textFieldID.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        textFieldID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldFullName1ActionPerformed(evt);
+                textFieldIDActionPerformed(evt);
             }
         });
 
@@ -226,7 +255,7 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textFieldImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                             .addComponent(btnUpload, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(70, 70, 70)
@@ -237,7 +266,7 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
                                 .addComponent(jLabel11)
                                 .addComponent(textFieldEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
                                 .addComponent(textFieldFullName)
-                                .addComponent(textFieldFullName1))
+                                .addComponent(textFieldID))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -273,7 +302,7 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)
-                        .addComponent(textFieldFullName1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -292,7 +321,7 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
                         .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(50, 50, 50))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textFieldImage, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnUpload, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -367,6 +396,31 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
+        String userUsing = ManageData.getManageData().getWho_is_using_this_program();
+        //ManageData.getManageData().allStudent.get(userUsing).setLinkOfAvatar(null);
+        String oldPath = ManageData.getManageData().allStudent.get(userUsing).getLinkOfAvatar();
+
+            ManageData.getManageData().setTemporaryAvatar(null);
+        //Save ...
+        //ManageData.getManageData().saveAllStudent();
+        
+            String linkAvatar = null;
+            Image im = Toolkit.getDefaultToolkit().createImage(linkAvatar);
+            im = im.getScaledInstance(textFieldImage.getWidth(), textFieldImage.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon ii = new ImageIcon(im);
+            textFieldImage.setText("");
+            textFieldImage.setIcon(ii);
+  
+        //ManageData.getManageData().setTemporaryAvatar(null);
+        //Save ...
+        //ManageData.getManageData().saveAllStudent();
+        
+        /*String linkAvatar = null;
+        Image im = Toolkit.getDefaultToolkit().createImage(linkAvatar);
+        im = im.getScaledInstance(textFieldImage.getWidth(), textFieldImage.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon ii = new ImageIcon(im);
+        textFieldImage.setText("");
+        textFieldImage.setIcon(ii);*/
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnSaveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaveMouseEntered
@@ -400,6 +454,39 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
 
     private void btnUploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadActionPerformed
         // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f = chooser.getSelectedFile();
+        if (f!=null){
+            String path = f.getAbsolutePath();       
+            
+            //Create image
+            Image im = Toolkit.getDefaultToolkit().createImage(path);
+            im = im.getScaledInstance(textFieldImage.getWidth(), textFieldImage.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon ii = new ImageIcon(im);
+            
+            textFieldImage.setText("");
+            textFieldImage.setIcon(ii);
+            
+            
+            File file = new File(path);
+            String newPath = "src/main/java/avatar/" + file.getName();
+            File file2 = new File(newPath);
+            String userUsing = ManageData.getManageData().getWho_is_using_this_program();
+            ManageData.getManageData().setTemporaryAvatar(newPath);
+            
+            try{
+                ManageData.getManageData().copyFileUsingChannel(file, file2);
+            }
+            catch (Exception e){
+                System.out.println("");
+            }
+            //String userUsing = ManageData.getManageData().getWho_is_using_this_program();
+            //ManageData.getManageData().allStudent.get(userUsing).setLinkOfAvatar(path);
+            
+            //Save
+            //ManageData.getManageData().saveAllStudent();
+        }
     }//GEN-LAST:event_btnUploadActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
@@ -414,6 +501,10 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
         String email = textFieldEmail.getText();
         ManageData.getManageData().allStudent.get(username).setEmail(email);
         
+        //Edit ID
+        String id = textFieldID.getText();
+        ManageData.getManageData().allStudent.get(username).setIdStudent(id);
+        
         //Edit phone number
         String phone = textFieldPhone.getText();
         ManageData.getManageData().allStudent.get(username).setPhone(phone);
@@ -421,6 +512,28 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
         //Edit password
         String password = String.valueOf(passwordField.getPassword());
         ManageData.getManageData().allStudent.get(username).setPassword(password);
+        
+        //Edit avatar
+        String path = ManageData.getManageData().getTemporaryAvatar();
+        String oldPath = ManageData.getManageData().allStudent.get(username).getLinkOfAvatar();
+        
+        if (path==null && oldPath!=null){
+            if (path==null && !oldPath.equals("null")){
+                try {
+                    if (oldPath!=null){
+                        if (ManageData.getManageData().checkingNotDuplicateAvatarFile(path)){
+                            Files.delete(Paths.get(oldPath));
+                        }
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+ 
+
+        
+        ManageData.getManageData().allStudent.get(username).setLinkOfAvatar(path);
         
         ManageData.getManageData().saveAllStudent();
         
@@ -430,9 +543,9 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
         frame7.setVisible(true);
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    private void textFieldFullName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldFullName1ActionPerformed
+    private void textFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldFullName1ActionPerformed
+    }//GEN-LAST:event_textFieldIDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -482,7 +595,6 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -493,7 +605,8 @@ public class Frame15_EditProfileStudent extends javax.swing.JFrame {
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField textFieldEmail;
     private javax.swing.JTextField textFieldFullName;
-    private javax.swing.JTextField textFieldFullName1;
+    private javax.swing.JTextField textFieldID;
+    private javax.swing.JLabel textFieldImage;
     private javax.swing.JTextField textFieldPhone;
     // End of variables declaration//GEN-END:variables
 }

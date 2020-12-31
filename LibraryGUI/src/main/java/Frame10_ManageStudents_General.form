@@ -45,7 +45,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="a" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -54,14 +54,14 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="a" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel1">
+        <Container class="javax.swing.JPanel" name="a">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -81,14 +81,12 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btnLibrary" min="-2" pref="130" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="btnLibrary1" min="-2" pref="32" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField_Search" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="jSeparator1" min="-2" pref="270" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btnLibrary1" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="textFieldSearch" max="32767" attributes="0"/>
                           </Group>
+                          <Component id="jSeparator1" min="-2" pref="270" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" alignment="1" pref="672" max="32767" attributes="0"/>
                           <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
                       </Group>
@@ -112,7 +110,7 @@
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnLibrary1" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="jTextField_Search" min="-2" max="-2" attributes="0"/>
+                          <Component id="textFieldSearch" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                       <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
@@ -138,7 +136,7 @@
                 <Property name="text" type="java.lang.String" value="Manage Students"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_Search">
+            <Component class="javax.swing.JTextField" name="textFieldSearch">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Avenir Next" size="20" style="0"/>
@@ -152,9 +150,9 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTextField_SearchMouseClicked"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_SearchActionPerformed"/>
-                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField_SearchKeyPressed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textFieldSearchMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldSearchActionPerformed"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textFieldSearchKeyPressed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnManage">
@@ -173,6 +171,9 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Avenir Next" size="18" style="1"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\ASUS\Documents\GitHub\Library-Management-Official-\LibraryGUI\src\main\java\com\mycompany\librarygui\Library_Icons\icons8-back_1.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -206,6 +207,9 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\ASUS\Documents\GitHub\Library-Management-Official-\LibraryGUI\src\main\java\com\mycompany\librarygui\Library_Icons\icons8-search_1.png"/>
+                </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -215,6 +219,7 @@
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnLibrary1MouseEntered"/>
                 <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnLibrary1MouseExited"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLibrary1ActionPerformed"/>
               </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -237,37 +242,12 @@
                       <Font name="Avenir" size="16" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor" postCode="jTable1.getTableHeader().setBackground(new Color(255, 25, 255));">
-                      <Table columnCount="5" rowCount="4">
-                        <Column editable="true" title="Student ID" type="java.lang.Object">
-                          <Data value="abc"/>
-                          <Data value="xyz"/>
-                          <Data value="null"/>
-                          <Data value="null"/>
-                        </Column>
-                        <Column editable="true" title="Name" type="java.lang.Object">
-                          <Data value="Minh"/>
-                          <Data value=""/>
-                          <Data value="null"/>
-                          <Data value="null"/>
-                        </Column>
-                        <Column editable="true" title="Phone" type="java.lang.Object">
-                          <Data value="456"/>
-                          <Data value=""/>
-                          <Data value="null"/>
-                          <Data value="null"/>
-                        </Column>
-                        <Column editable="true" title="Username" type="java.lang.Object">
-                          <Data value="ert"/>
-                          <Data value=""/>
-                          <Data value="null"/>
-                          <Data value="null"/>
-                        </Column>
-                        <Column editable="true" title="Overdue" type="java.lang.Object">
-                          <Data value="12"/>
-                          <Data value=""/>
-                          <Data value="null"/>
-                          <Data value="null"/>
-                        </Column>
+                      <Table columnCount="5" rowCount="0">
+                        <Column editable="true" title="Student ID" type="java.lang.Object"/>
+                        <Column editable="true" title="Name" type="java.lang.Object"/>
+                        <Column editable="true" title="Phone" type="java.lang.Object"/>
+                        <Column editable="true" title="Username" type="java.lang.Object"/>
+                        <Column editable="true" title="Overdue" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

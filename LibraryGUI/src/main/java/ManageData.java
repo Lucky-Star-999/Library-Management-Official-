@@ -1,8 +1,11 @@
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -38,7 +41,7 @@ public class ManageData {
     //Show the username of a user logging in the program
     private String who_is_using_this_program;
     private String type_of_user_using_this_program;
-    
+    private String temporaryAvatar;
     
     //Show the choosing row at jTable
     private String username_choosen;
@@ -91,7 +94,16 @@ public class ManageData {
         this.book_choosen = book_choosen;
     }
     
+    public String getTemporaryAvatar() {
+        return temporaryAvatar;
+    }
+
+    public void setTemporaryAvatar(String temporaryAvatar) {
+        this.temporaryAvatar = temporaryAvatar;
+    }
     //End of getters and setters
+
+    
 
     
 
@@ -302,4 +314,38 @@ public class ManageData {
     }
     
     
+    public static void copyFileUsingChannel(File source, File dest) throws IOException {
+        FileChannel sourceChannel = null;
+        FileChannel destChannel = null;
+        try {
+            sourceChannel = new FileInputStream(source).getChannel();
+            destChannel = new FileOutputStream(dest).getChannel();
+            destChannel.transferFrom(sourceChannel, 0, sourceChannel.size());
+        }finally{
+           sourceChannel.close();
+           destChannel.close();
+        }
+    }
+    
+    public boolean checkingNotDuplicateAvatarFile(String path){
+        int count = 0;
+        for(Manager value: ManageData.getManageData().allManager.values()){
+            if (value.getLinkOfAvatar().equals(path)){
+                count++;
+            }
+        }
+        for(Student value: ManageData.getManageData().allStudent.values()){
+            if (value.getLinkOfAvatar().equals(path)){
+                count++;
+            }
+        }
+        
+        if (count == 1){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
+    }
 }

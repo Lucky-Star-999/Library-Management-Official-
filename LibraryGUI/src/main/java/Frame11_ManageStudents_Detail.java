@@ -5,6 +5,10 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.io.File;
+import javax.swing.ImageIcon;
 
 
 /*
@@ -31,7 +35,12 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         jTable1.getTableHeader().setDefaultRenderer(headerCellRenderer);
         
         
-        
+        //Set image of button
+        String linkImageButton1 = "src/main/java/com/mycompany/librarygui/Library_Icons/icons8-back_1.png";
+        Image im = Toolkit.getDefaultToolkit().createImage(linkImageButton1);
+        im = im.getScaledInstance(btnBack.getWidth(), btnBack.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon ii = new ImageIcon(im);
+        btnBack.setIcon(ii);
 
     }
 
@@ -87,6 +96,7 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         });
 
         btnBack.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\Library-Management-Official-\\LibraryGUI\\src\\main\\java\\com\\mycompany\\librarygui\\Library_Icons\\icons8-back_1.png")); // NOI18N
         btnBack.setBorderPainted(false);
         btnBack.setContentAreaFilled(false);
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
