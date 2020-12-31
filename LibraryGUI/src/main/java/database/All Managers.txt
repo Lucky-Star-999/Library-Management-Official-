@@ -15,7 +15,7 @@ minh
  Do Quang Minh
  dqminh@gmail.com
  0908209847
-src/main/java/avatar/Dark-2.jpg
+null
 aaaaaaaa
 111111
 aaaaa
