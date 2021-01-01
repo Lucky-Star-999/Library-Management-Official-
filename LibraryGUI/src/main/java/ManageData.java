@@ -401,4 +401,31 @@ public class ManageData {
             
         }
     }*/
+    
+    public void updateStudentFine(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate today = java.time.LocalDate.now();
+        
+        for(String key: this.allStudent.keySet()){
+            int fine = 0;
+            for(Book value: this.allBook.values()){
+                if(value.getWho_is_borrowing_this_book()!=null){
+                    if (!value.getWho_is_borrowing_this_book().equals("null")){
+                        if(value.getWho_is_borrowing_this_book().equals(key)){
+                            LocalDate startBorrowed = LocalDate.parse(value.getStartBorrowed(), formatter);
+                            Period period = Period.between(startBorrowed, today);
+                            int differentDays = period.getDays();
+                            if (differentDays > 10){
+                                fine += (differentDays - 10);
+                            }
+                        } 
+                    }
+                } 
+            }
+            if (fine > 0){
+                fine *= 15000;
+            }
+            this.allStudent.get(key).setFine(fine);
+        }
+    }
 }

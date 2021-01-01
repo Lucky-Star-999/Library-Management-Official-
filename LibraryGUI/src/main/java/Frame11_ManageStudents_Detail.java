@@ -35,7 +35,7 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         jTable1.getTableHeader().setDefaultRenderer(headerCellRenderer);
         
         
-        //ManageData.getManageData().updateStudentFine();
+        ManageData.getManageData().updateStudentFine();
         
         //Set image of button
         String linkImageButton1 = "src/main/java/com/mycompany/librarygui/Library_Icons/icons8-back_1.png";
@@ -291,7 +291,7 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         if (i != -1){
             String id = String.valueOf(jTable1.getValueAt(i, 0));
             
-            //String userChoosen = ManageData.getManageData().allBook.get(id).getWho_is_borrowing_this_book();
+            String userChoosen = ManageData.getManageData().allBook.get(id).getWho_is_borrowing_this_book();
             //String fine = String.valueOf(ManageData.getManageData().allStudent.get(userChoosen).getFine()) + " VND";
             //textFieldFine.setText(fine);
             
@@ -300,9 +300,9 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
             ManageData.getManageData().allBook.get(id).setEndBorrowedPrediction(null);
             ManageData.getManageData().allBook.get(id).setAvailable("Yes");
             
-            /*ManageData.getManageData().updateStudentFine();
+            ManageData.getManageData().updateStudentFine();
             String fine = String.valueOf(ManageData.getManageData().allStudent.get(userChoosen).getFine()) + " VND";
-            textFieldFine.setText(fine);*/
+            textFieldFine.setText(fine);
             
             ManageData.getManageData().saveAllBook();
         
@@ -316,9 +316,11 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
             model.setRowCount(0);
             //System.out.println(ManageData.getManageData().getUsername_choosen());
             String username = ManageData.getManageData().getUsername_choosen();
+
             
-            
-            
+            ManageData.getManageData().updateStudentFine();
+            fine = String.valueOf(ManageData.getManageData().allStudent.get(userChoosen).getFine()) + " VND";
+            textFieldFine.setText(fine);
             
             //System.out.println(username);
             //System.out.println(ManageData.getManageData().allBook.values());

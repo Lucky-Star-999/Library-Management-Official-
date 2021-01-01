@@ -43,7 +43,7 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
          headerCellRenderer.setFont(new Font("Avenir Next", Font.BOLD, 16));
         jTable1.getTableHeader().setDefaultRenderer(headerCellRenderer);
         
-        //ManageData.getManageData().updateStudentFine();
+        ManageData.getManageData().updateStudentFine();
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         
         /*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");

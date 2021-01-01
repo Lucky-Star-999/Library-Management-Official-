@@ -60,7 +60,7 @@ public class Main {
             ManageData.getManageData().loadAllBook();
         }
         
-        //ManageData.getManageData().updateStudentFine();
+        ManageData.getManageData().updateStudentFine();
         
         //Change the variable to test any frame
         JFrame frameTest = new JFrame();

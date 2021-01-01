@@ -388,6 +388,7 @@ public class Frame21_StudentBorrowBook extends javax.swing.JFrame {
         // TODO add your handling code here:
         int i = jTable1.getSelectedRow();
         
+        ManageData.getManageData().updateStudentFine();
         
         if (i!=-1){
             
