@@ -53,6 +53,7 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
         
         model.setRowCount(0);
         for(Student value: ManageData.getManageData().allStudent.values()){
+            int i=0;
             /*LocalDate startBorrowed = LocalDate.parse(value.getStartBorrowed(), formatter);
             Period period = Period.between(startBorrowed, today);
             int differentDays = period.getDays();*/
@@ -65,6 +66,11 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
             }
             //model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), "No" } );
             model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), overdue } );
+            /*if (value.getFine()>0){
+                model.setRowColor(i, Color.PINK);
+            }*/
+  
+            i++;
             //model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), differentDays } );
         }
         
@@ -354,7 +360,14 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         model.setRowCount(0);
         for(Student value: ManageData.getManageData().allStudent.values()){
-            model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), "No" } );
+            String overdue;
+            if (value.getFine()>0){
+                overdue = "Yes";
+            }
+            else{
+                overdue = "No";
+            }
+            model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), overdue } );
         }
     }//GEN-LAST:event_btnLibraryActionPerformed
 
@@ -397,7 +410,14 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
         }*/
         
         for(Student value: Searching.getSearching().mergeSearch.values()){
-            model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), "No" } );
+            String overdue;
+            if (value.getFine()>0){
+                overdue = "Yes";
+            }
+            else{
+                overdue = "No";
+            }
+            model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), overdue } );
         }
      
     }//GEN-LAST:event_btnLibrary1ActionPerformed
