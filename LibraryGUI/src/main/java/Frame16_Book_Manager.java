@@ -73,7 +73,7 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
         for (String key: comboBoxSupport.keySet()){
             jComboBox1.addItem(key);
         }
-        jComboBox1.setSelectedItem("Thriller");
+        jComboBox1.setSelectedItem("<All Category>");
     }
 
     /**
@@ -458,7 +458,21 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
         String contents = String.valueOf(jComboBox1.getSelectedItem());
-        
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        model.setRowCount(0);
+        if(!contents.equals("<All Category>")){
+            for(Book value: ManageData.getManageData().allBook.values()){
+                if (value.getCategory().equals(contents)){
+                    model.addRow( new Object[]{ value.getIdBook(), value.getCategory(), value.getTitle(), value.getAuthor(), value.getAvailable() } );
+                }
+            }
+        }
+        else{
+            for(Book value: ManageData.getManageData().allBook.values()){
+                model.addRow( new Object[]{ value.getIdBook(), value.getCategory(), value.getTitle(), value.getAuthor(), value.getAvailable() } );
+            }
+        }
+
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
