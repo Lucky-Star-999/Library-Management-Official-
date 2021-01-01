@@ -9,6 +9,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
 import javax.swing.ImageIcon;
+import java.util.HashMap;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -60,6 +61,20 @@ public class Frame14_Book_Student extends javax.swing.JFrame {
         for(Book value: ManageData.getManageData().allBook.values()){
             model.addRow( new Object[]{ value.getIdBook(), value.getCategory(), value.getTitle(), value.getAuthor(), value.getAvailable() } );
         }
+        
+        
+        //HashMap contain comboBox
+        HashMap<String, String> comboBoxSupport = new HashMap<>();
+        comboBoxSupport.clear();
+        HashMap<String, Book> allBook = ManageData.getManageData().allBook;
+        for(Book key: allBook.values()){
+            comboBoxSupport.put(key.getCategory(), "1");
+        }
+        jComboBox1.addItem("<All Category>");
+        for (String key: comboBoxSupport.keySet()){
+            jComboBox1.addItem(key);
+        }
+        jComboBox1.setSelectedItem("<All Category>");
     }
 
     /**
@@ -97,7 +112,7 @@ public class Frame14_Book_Student extends javax.swing.JFrame {
         jLabel1.setText("Books ");
 
         jLabel2.setFont(new java.awt.Font("Avenir", 1, 24)); // NOI18N
-        jLabel2.setText("Catagory");
+        jLabel2.setText("Category");
 
         jTextField_Search.setFont(new java.awt.Font("Avenir Next", 0, 16)); // NOI18N
         jTextField_Search.setForeground(new java.awt.Color(102, 102, 102));
@@ -214,7 +229,6 @@ public class Frame14_Book_Student extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jComboBox1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -245,7 +259,7 @@ public class Frame14_Book_Student extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -368,6 +382,11 @@ public class Frame14_Book_Student extends javax.swing.JFrame {
 
     private void btnShowListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowListActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        model.setRowCount(0);
+        for(Book value: ManageData.getManageData().allBook.values()){
+            model.addRow( new Object[]{ value.getIdBook(), value.getCategory(), value.getTitle(), value.getAuthor(), value.getAvailable() } );
+        }
     }//GEN-LAST:event_btnShowListActionPerformed
 
     private void btnSearchMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchMouseExited
@@ -391,10 +410,50 @@ public class Frame14_Book_Student extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
+        String contents = String.valueOf(jComboBox1.getSelectedItem());
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        model.setRowCount(0);
+        if(!contents.equals("<All Category>")){
+            for(Book value: ManageData.getManageData().allBook.values()){
+                if (value.getCategory().equals(contents)){
+                    model.addRow( new Object[]{ value.getIdBook(), value.getCategory(), value.getTitle(), value.getAuthor(), value.getAvailable() } );
+                }
+            }
+        }
+        else{
+            for(Book value: ManageData.getManageData().allBook.values()){
+                model.addRow( new Object[]{ value.getIdBook(), value.getCategory(), value.getTitle(), value.getAuthor(), value.getAvailable() } );
+            }
+        }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
+        String search = jTextField_Search.getText();
+        
+        //Searching.getSearching().translateToSearchStudentByName(search);
+        //Searching.getSearching().translateToSearchStudentById(search);
+        
+        //New methods
+        Searching.getSearching().mergeSearchBook(search);
+        
+        
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        
+        model.setRowCount(0);
+        
+        /*for(Student value: Searching.getSearching().searchStudentByName.values()){
+            model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), "No" } );
+        }
+
+        for(Student value: Searching.getSearching().searchStudentById.values()){
+            model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), "No" } );
+        }*/
+        
+        
+        for(Book value: Searching.getSearching().searchBookByNameAndId.values()){
+            model.addRow( new Object[]{ value.getIdBook(), value.getCategory(), value.getTitle(), value.getAuthor(), value.getAvailable() } );
+        }
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
