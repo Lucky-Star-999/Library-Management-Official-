@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -33,17 +34,17 @@ public class Frame18_ForgotPassword extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        textFieldUsername = new javax.swing.JTextField();
         btnCancel = new javax.swing.JButton();
         btnResetPW = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        textFieldEmail = new javax.swing.JTextField();
+        textFieldPhone = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        labelPassword = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,11 +59,11 @@ public class Frame18_ForgotPassword extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
         jLabel2.setText("Username");
 
-        jTextField1.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        textFieldUsername.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
+        textFieldUsername.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        textFieldUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                textFieldUsernameActionPerformed(evt);
             }
         });
 
@@ -76,11 +77,16 @@ public class Frame18_ForgotPassword extends javax.swing.JFrame {
                 btnCancelMouseExited(evt);
             }
         });
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
 
         btnResetPW.setBackground(new java.awt.Color(0, 122, 255));
         btnResetPW.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
         btnResetPW.setForeground(new java.awt.Color(255, 255, 255));
-        btnResetPW.setText("Reset Password");
+        btnResetPW.setText("Show Password");
         btnResetPW.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnResetPWMouseEntered(evt);
@@ -103,36 +109,37 @@ public class Frame18_ForgotPassword extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Phone number");
 
-        jTextField2.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        textFieldEmail.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
+        textFieldEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        textFieldEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                textFieldEmailActionPerformed(evt);
             }
         });
 
-        jTextField3.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        textFieldPhone.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
+        textFieldPhone.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        textFieldPhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                textFieldPhoneActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Fill in your email and phone number to reset your password.");
+        jLabel5.setText("Fill in your email and phone number to show your password.");
 
         jLabel6.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Your Password");
 
-        jTextField4.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        jTextField4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        labelPassword.setEditable(false);
+        labelPassword.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
+        labelPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        labelPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                labelPasswordActionPerformed(evt);
             }
         });
 
@@ -162,12 +169,12 @@ public class Frame18_ForgotPassword extends javax.swing.JFrame {
                                 .addComponent(btnResetPW)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnCancel))
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(textFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textFieldPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(labelPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(227, 227, 227))
         );
         jPanel1Layout.setVerticalGroup(
@@ -181,20 +188,20 @@ public class Frame18_ForgotPassword extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnResetPW)
@@ -233,9 +240,9 @@ public class Frame18_ForgotPassword extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void textFieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_textFieldUsernameActionPerformed
 
     private void btnResetPWMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnResetPWMouseEntered
         // TODO add your handling code here:
@@ -260,21 +267,51 @@ public class Frame18_ForgotPassword extends javax.swing.JFrame {
         btnCancel.setForeground(new Color(0, 0, 0));
     }//GEN-LAST:event_btnCancelMouseExited
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void textFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_textFieldEmailActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void textFieldPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldPhoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_textFieldPhoneActionPerformed
 
     private void btnResetPWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetPWActionPerformed
         // TODO add your handling code here:
+        //String typeOfUser = ManageData.getManageData().getType_of_user_using_this_program();
+        String username = textFieldUsername.getText();
+        String mail = textFieldEmail.getText();
+        String phone = textFieldPhone.getText();
+        
+        boolean result = false;
+        
+        if (!username.equals("") && !mail.equals("") && !phone.equals("")){
+                for (Manager value : ManageData.getManageData().allManager.values()){
+                    if (value.getUsername().equals(username) && value.getEmail().equals(mail) && value.getPhone().equals(phone)){
+                        labelPassword.setText(value.getPassword());
+                        result = true;
+                    }
+                }
+        
+
+            if (result == false){
+                JOptionPane.showMessageDialog(null, "Wrong information!");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Please fill in all information!");
+        }
     }//GEN-LAST:event_btnResetPWActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void labelPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_labelPasswordActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Frame2_LoginManager frame2 = new Frame2_LoginManager();
+        frame2.setVisible(true);
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -323,9 +360,9 @@ public class Frame18_ForgotPassword extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField labelPassword;
+    private javax.swing.JTextField textFieldEmail;
+    private javax.swing.JTextField textFieldPhone;
+    private javax.swing.JTextField textFieldUsername;
     // End of variables declaration//GEN-END:variables
 }
