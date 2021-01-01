@@ -69,9 +69,11 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
         for(Book key: allBook.values()){
             comboBoxSupport.put(key.getCategory(), "1");
         }
+        jComboBox1.addItem("<All Category>");
         for (String key: comboBoxSupport.keySet()){
             jComboBox1.addItem(key);
         }
+        jComboBox1.setSelectedItem("Thriller");
     }
 
     /**
@@ -111,7 +113,7 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
         jLabel1.setText("Books ");
 
         jLabel2.setFont(new java.awt.Font("Avenir", 1, 24)); // NOI18N
-        jLabel2.setText("Catagory");
+        jLabel2.setText("Category");
 
         jTextField_Search.setFont(new java.awt.Font("Avenir Next", 0, 16)); // NOI18N
         jTextField_Search.setForeground(new java.awt.Color(102, 102, 102));
@@ -228,6 +230,11 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jComboBox1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
+        jComboBox1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jComboBox1MouseClicked(evt);
+            }
+        });
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -294,7 +301,7 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -450,6 +457,8 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
+        String contents = String.valueOf(jComboBox1.getSelectedItem());
+        
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
@@ -570,6 +579,12 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
             frame21.setVisible(true);
         }
     }//GEN-LAST:event_btnAddNewBook1ActionPerformed
+
+    private void jComboBox1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseClicked
+        // TODO add your handling code here:
+        /*String contents = String.valueOf(jComboBox1.getSelectedItem());
+        System.out.println(contents);*/
+    }//GEN-LAST:event_jComboBox1MouseClicked
 
     /**
      * @param args the command line arguments
