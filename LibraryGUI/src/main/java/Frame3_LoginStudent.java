@@ -141,7 +141,6 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
         jLabel6.setText("Password");
 
         btnBack2.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
-        btnBack2.setIcon(new javax.swing.ImageIcon("/Users/doquangminh/Documents/GitHub/Library-Management-Official-/LibraryGUI/src/main/java/com/mycompany/librarygui/Library_Icons/icons8-back_1.png")); // NOI18N
         btnBack2.setBorderPainted(false);
         btnBack2.setContentAreaFilled(false);
 
@@ -225,6 +224,7 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void textFieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldUsernameActionPerformed
@@ -333,8 +333,6 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg1;
-    private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnBack1;
     private javax.swing.JButton btnBack2;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;

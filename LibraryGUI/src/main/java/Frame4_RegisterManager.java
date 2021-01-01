@@ -209,7 +209,6 @@ public class Frame4_RegisterManager extends javax.swing.JFrame {
         jLabel11.setText("Password");
 
         btnBack2.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
-        btnBack2.setIcon(new javax.swing.ImageIcon("/Users/doquangminh/Documents/GitHub/Library-Management-Official-/LibraryGUI/src/main/java/com/mycompany/librarygui/Library_Icons/icons8-back_1.png")); // NOI18N
         btnBack2.setBorderPainted(false);
         btnBack2.setContentAreaFilled(false);
 
@@ -333,6 +332,7 @@ public class Frame4_RegisterManager extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void textFieldFullNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldFullNameActionPerformed

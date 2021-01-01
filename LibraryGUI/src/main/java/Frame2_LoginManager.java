@@ -130,7 +130,6 @@ public class Frame2_LoginManager extends javax.swing.JFrame {
         jLabel3.setText("Password");
 
         btnBack.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
-        btnBack.setIcon(new javax.swing.ImageIcon("/Users/doquangminh/Documents/GitHub/Library-Management-Official-/LibraryGUI/src/main/java/com/mycompany/librarygui/Library_Icons/icons8-back_1.png")); // NOI18N
         btnBack.setBorderPainted(false);
         btnBack.setContentAreaFilled(false);
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -230,6 +229,7 @@ public class Frame2_LoginManager extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void textFieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldUsernameActionPerformed

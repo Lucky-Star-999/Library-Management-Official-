@@ -257,6 +257,7 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnChangeFineMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeFineMouseEntered
