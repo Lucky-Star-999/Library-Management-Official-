@@ -16,6 +16,9 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
 import javax.swing.ImageIcon;
+import java.time.Period;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -40,12 +43,29 @@ public class Frame10_ManageStudents_General extends javax.swing.JFrame {
          headerCellRenderer.setFont(new Font("Avenir Next", Font.BOLD, 16));
         jTable1.getTableHeader().setDefaultRenderer(headerCellRenderer);
         
-        
+        //ManageData.getManageData().updateStudentFine();
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        
+        /*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate today = java.time.LocalDate.now();*/
+        
+        //String date = formatter.format(java.time.LocalDate.now());   
         
         model.setRowCount(0);
         for(Student value: ManageData.getManageData().allStudent.values()){
-            model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), "No" } );
+            /*LocalDate startBorrowed = LocalDate.parse(value.getStartBorrowed(), formatter);
+            Period period = Period.between(startBorrowed, today);
+            int differentDays = period.getDays();*/
+            String overdue;
+            if (value.getFine()>0){
+                overdue = "Yes";
+            }
+            else{
+                overdue = "No";
+            }
+            //model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), "No" } );
+            model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), overdue } );
+            //model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), differentDays } );
         }
         
         

@@ -16,6 +16,8 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
 import javax.swing.ImageIcon;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -396,14 +398,30 @@ public class Frame21_StudentBorrowBook extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "This book is not available!");
             }
             else{
+                
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                
+                //Manual set borrowed time------------------------------------------------------------------
                 int startDate = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter the day: "));
                 int startMonth = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter the month: "));
                 int startYear = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter the year: "));
                 
                 String date = startDate + "/" + startMonth + "/" + startYear;
+                //--------------------------------------------------------------------------------------------
+                
+                
+                
+                //Automatic set borrowed time--------------------------------------------------------
+                //String date = formatter.format(java.time.LocalDate.now()); 
+                //-----------------------------------------------------------------------------------
                 
                 ManageData.getManageData().allBook.get(idBook).setWho_is_borrowing_this_book(user);
                 ManageData.getManageData().allBook.get(idBook).setStartBorrowed(date);
+                
+                LocalDate startBorrowed = LocalDate.parse(date, formatter);
+                String endBorrow = formatter.format(startBorrowed.plusDays(10));
+                
+                ManageData.getManageData().allBook.get(idBook).setEndBorrowedPrediction(endBorrow);
                 ManageData.getManageData().allBook.get(idBook).setAvailable("No");
                 ManageData.getManageData().saveAllBook();
                 JOptionPane.showMessageDialog(null, "Borrowing book successfully!\nPress \"Back\" to return!");

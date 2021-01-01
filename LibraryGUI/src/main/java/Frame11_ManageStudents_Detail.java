@@ -35,6 +35,8 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         jTable1.getTableHeader().setDefaultRenderer(headerCellRenderer);
         
         
+        //ManageData.getManageData().updateStudentFine();
+        
         //Set image of button
         String linkImageButton1 = "src/main/java/com/mycompany/librarygui/Library_Icons/icons8-back_1.png";
         Image im = Toolkit.getDefaultToolkit().createImage(linkImageButton1);
@@ -48,6 +50,8 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
             String userChoosen = ManageData.getManageData().getUsername_choosen();
             labelName.setText(ManageData.getManageData().allStudent.get(userChoosen).getFullName());
             labelId.setText(ManageData.getManageData().allStudent.get(userChoosen).getIdStudent());
+            String fine = String.valueOf(ManageData.getManageData().allStudent.get(userChoosen).getFine()) + " VND";
+            textFieldFine.setText(fine);
         }
         
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
@@ -79,7 +83,6 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        btnChangeFine = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -87,6 +90,8 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         labelName = new javax.swing.JLabel();
         labelId = new javax.swing.JLabel();
         btnChangeFine1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        textFieldFine = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,22 +106,6 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
         jLabel2.setText("Name:");
-
-        btnChangeFine.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
-        btnChangeFine.setText("Change Fine");
-        btnChangeFine.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnChangeFineMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnChangeFineMouseExited(evt);
-            }
-        });
-        btnChangeFine.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnChangeFineActionPerformed(evt);
-            }
-        });
 
         btnBack.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
         btnBack.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\Library-Management-Official-\\LibraryGUI\\src\\main\\java\\com\\mycompany\\librarygui\\Library_Icons\\icons8-back_1.png")); // NOI18N
@@ -181,6 +170,11 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
+        jLabel4.setText("Fine:");
+
+        textFieldFine.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -200,8 +194,10 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
                         .addComponent(labelId))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnChangeFine, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(29, 29, 29)
+                        .addComponent(textFieldFine)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnChangeFine1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(100, Short.MAX_VALUE))
@@ -223,8 +219,9 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnChangeFine, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnChangeFine1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnChangeFine1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(textFieldFine))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
@@ -260,18 +257,6 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnChangeFineMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeFineMouseEntered
-        // TODO add your handling code here:
-        btnChangeFine.setBackground(new Color(20, 142, 255));
-        btnChangeFine.setForeground(new Color(255, 255, 255));
-    }//GEN-LAST:event_btnChangeFineMouseEntered
-
-    private void btnChangeFineMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeFineMouseExited
-        // TODO add your handling code here:
-        btnChangeFine.setBackground(new Color(255, 255, 255));
-        btnChangeFine.setForeground(new Color(0, 0, 0));
-    }//GEN-LAST:event_btnChangeFineMouseExited
-
     private void btnBackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseEntered
         // TODO add your handling code here:
         
@@ -289,13 +274,6 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         frame10.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnChangeFineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeFineActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-        Frame12_ChangeFine frame11 = new Frame12_ChangeFine();
-        frame11.setVisible(true);
-    }//GEN-LAST:event_btnChangeFineActionPerformed
-
     private void btnChangeFine1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeFine1MouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_btnChangeFine1MouseEntered
@@ -308,15 +286,24 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         // TODO add your handling code here:
         int i = jTable1.getSelectedRow();
         
-        
+        //ManageData.getManageData().updateStudentFine();
         
         if (i != -1){
             String id = String.valueOf(jTable1.getValueAt(i, 0));
-
+            
+            //String userChoosen = ManageData.getManageData().allBook.get(id).getWho_is_borrowing_this_book();
+            //String fine = String.valueOf(ManageData.getManageData().allStudent.get(userChoosen).getFine()) + " VND";
+            //textFieldFine.setText(fine);
+            
             ManageData.getManageData().allBook.get(id).setWho_is_borrowing_this_book(null);
             ManageData.getManageData().allBook.get(id).setStartBorrowed(null);
             ManageData.getManageData().allBook.get(id).setEndBorrowedPrediction(null);
             ManageData.getManageData().allBook.get(id).setAvailable("Yes");
+            
+            /*ManageData.getManageData().updateStudentFine();
+            String fine = String.valueOf(ManageData.getManageData().allStudent.get(userChoosen).getFine()) + " VND";
+            textFieldFine.setText(fine);*/
+            
             ManageData.getManageData().saveAllBook();
         
             ManageData.getManageData().setBook_choosen(null);
@@ -333,8 +320,8 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
             
             
             
-            System.out.println(username);
-            System.out.println(ManageData.getManageData().allBook.values());
+            //System.out.println(username);
+            //System.out.println(ManageData.getManageData().allBook.values());
             for(Book value: ManageData.getManageData().allBook.values()){
                 if (value.getWho_is_borrowing_this_book()!=null){
                     if (value.getWho_is_borrowing_this_book().equals(username)){
@@ -382,16 +369,17 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnChangeFine;
     private javax.swing.JButton btnChangeFine1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelId;
     private javax.swing.JLabel labelName;
+    private javax.swing.JLabel textFieldFine;
     // End of variables declaration//GEN-END:variables
 }

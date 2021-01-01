@@ -13,6 +13,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import javax.swing.JOptionPane;
+import java.time.Period;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 
 /*
@@ -378,6 +381,24 @@ public class ManageData {
         }
         for (String key: comboBoxSupport.keySet()){
             jComboBox1.addItem(key);
+        }
+    }*/
+    
+    /*public void updateStudentFine(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate today = java.time.LocalDate.now();
+        
+        for(Book value: ManageData.getManageData().allBook.values()){
+            if (!value.getWho_is_borrowing_this_book().equals("null")){
+                LocalDate startBorrowed = LocalDate.parse(value.getStartBorrowed(), formatter);
+                Period period = Period.between(startBorrowed, today);
+                int differentDays = period.getDays();
+                System.out.println(differentDays);
+                if (differentDays > 10){
+                    this.allStudent.get(value.getWho_is_borrowing_this_book()).setFine((differentDays - 10)*15000);
+                }
+            }
+            
         }
     }*/
 }
