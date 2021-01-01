@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import javax.swing.JOptionPane;
 
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -37,6 +38,9 @@ public class ManageData {
     
     //An array contains the book borrowed for all student currently
     ArrayList<String> bookBorrowed = new ArrayList<>();
+    
+    //HashMap contain comboBox
+    //HashMap<String, String> comboBoxSupport = new HashMap<>();
     
     //Show the username of a user logging in the program
     private String who_is_using_this_program;
@@ -366,4 +370,14 @@ public class ManageData {
             return false;
         }
     }
+    
+    /*public void copyCategoryMapComboBox(JComboBox jComboBox1){
+        this.comboBoxSupport.clear();
+        for(Book key: allBook.values()){
+            this.comboBoxSupport.put(key.getCategory(), "1");
+        }
+        for (String key: comboBoxSupport.keySet()){
+            jComboBox1.addItem(key);
+        }
+    }*/
 }

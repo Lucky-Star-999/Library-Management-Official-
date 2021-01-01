@@ -9,6 +9,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
 import javax.swing.ImageIcon;
+import java.util.HashMap;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -59,7 +60,18 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
         for(Book value: ManageData.getManageData().allBook.values()){
             model.addRow( new Object[]{ value.getIdBook(), value.getCategory(), value.getTitle(), value.getAuthor(), value.getAvailable() } );
         }
+        
 
+        //HashMap contain comboBox
+        HashMap<String, String> comboBoxSupport = new HashMap<>();
+        comboBoxSupport.clear();
+        HashMap<String, Book> allBook = ManageData.getManageData().allBook;
+        for(Book key: allBook.values()){
+            comboBoxSupport.put(key.getCategory(), "1");
+        }
+        for (String key: comboBoxSupport.keySet()){
+            jComboBox1.addItem(key);
+        }
     }
 
     /**
@@ -216,7 +228,6 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jComboBox1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -502,6 +513,18 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
         model.setRowCount(0);
         for(Book value: ManageData.getManageData().allBook.values()){
             model.addRow( new Object[]{ value.getIdBook(), value.getCategory(), value.getTitle(), value.getAuthor(), value.getAvailable() } );
+        }
+        
+        //HashMap contain comboBox
+        jComboBox1.removeAllItems();
+        HashMap<String, String> comboBoxSupport = new HashMap<>();
+        comboBoxSupport.clear();
+        HashMap<String, Book> allBook = ManageData.getManageData().allBook;
+        for(Book key: allBook.values()){
+            comboBoxSupport.put(key.getCategory(), "1");
+        }
+        for (String key: comboBoxSupport.keySet()){
+            jComboBox1.addItem(key);
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
