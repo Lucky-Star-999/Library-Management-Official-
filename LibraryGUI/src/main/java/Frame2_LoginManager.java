@@ -240,9 +240,9 @@ public class Frame2_LoginManager extends javax.swing.JFrame {
         // TODO add your handling code here:
         String username = textFieldUsername.getText();
         String pass = String.valueOf(passwordField.getPassword());
-        System.out.println(username);
-        System.out.println(pass);
-        System.out.println(ManageData.getManageData().allManager);
+        //System.out.println(username);
+        //System.out.println(pass);
+        //System.out.println(ManageData.getManageData().allManager);
         if(ManageData.getManageData().checkLoginManager(ManageData.getManageData().allManager, username, pass)==1){
             ManageData.getManageData().setWho_is_using_this_program(username);
             this.dispose();

@@ -314,7 +314,33 @@ public class Frame20_AddBook extends javax.swing.JFrame {
     private void btnAddBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddBookActionPerformed
         // TODO add your handling code here:
         String id = textFieldId.getText();
-        ManageData.getManageData().allBook.put(id, new Book());
+        
+        boolean notDuplicate = ManageData.getManageData().checkingNotDuplicateBook(id);
+        
+        if (notDuplicate){
+            if (id.equals("")){
+                JOptionPane.showMessageDialog(null, "Please enter valid ID!");
+            }
+            else{
+                ManageData.getManageData().allBook.put(id, new Book());
+                ManageData.getManageData().allBook.get(id).setAuthor(textFieldAuthor.getText());
+                ManageData.getManageData().allBook.get(id).setCategory(textFieldCategory.getText());
+                ManageData.getManageData().allBook.get(id).setIdBook(id);
+                ManageData.getManageData().allBook.get(id).setTitle(textFieldTitle.getText());
+                ManageData.getManageData().allBook.get(id).setAvailable("Yes");
+        
+                String path = ManageData.getManageData().getTemporaryAvatar();
+                ManageData.getManageData().allBook.get(id).setLink(path);
+        
+                ManageData.getManageData().saveAllBook();
+                JOptionPane.showMessageDialog(null, "Add book successfully!\nPress \"Cancel\" to return");
+            }
+ 
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "There already existed an ID book.\nPlease enter another ID!");
+        }
+        /*ManageData.getManageData().allBook.put(id, new Book());
         ManageData.getManageData().allBook.get(id).setAuthor(textFieldAuthor.getText());
         ManageData.getManageData().allBook.get(id).setCategory(textFieldCategory.getText());
         ManageData.getManageData().allBook.get(id).setIdBook(id);
@@ -325,7 +351,7 @@ public class Frame20_AddBook extends javax.swing.JFrame {
         ManageData.getManageData().allBook.get(id).setLink(path);
         
         ManageData.getManageData().saveAllBook();
-        JOptionPane.showMessageDialog(null, "Add book successfully!\nPress \"Cancel\" to return");
+        JOptionPane.showMessageDialog(null, "Add book successfully!\nPress \"Cancel\" to return");*/
     }//GEN-LAST:event_btnAddBookActionPerformed
 
     private void btnAddBookMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddBookMouseExited

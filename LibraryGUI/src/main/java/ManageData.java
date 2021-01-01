@@ -350,4 +350,20 @@ public class ManageData {
         }
         
     }
+    
+    
+    public boolean checkingNotDuplicateBook(String id){
+        int count = 0;
+        for(String key: allBook.keySet()){
+            if (key.equals(id)){
+                count++;
+            }
+        }
+        if (count==0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
