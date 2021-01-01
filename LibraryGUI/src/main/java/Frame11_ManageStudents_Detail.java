@@ -9,7 +9,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
 import javax.swing.ImageIcon;
-
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -86,6 +86,7 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         labelName = new javax.swing.JLabel();
         labelId = new javax.swing.JLabel();
+        btnChangeFine1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -164,6 +165,22 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         labelId.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
         labelId.setText("ITITIU19028");
 
+        btnChangeFine1.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
+        btnChangeFine1.setText("Return book");
+        btnChangeFine1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnChangeFine1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnChangeFine1MouseExited(evt);
+            }
+        });
+        btnChangeFine1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChangeFine1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -183,7 +200,10 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
                         .addComponent(labelId))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnChangeFine, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnChangeFine, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnChangeFine1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(100, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -202,7 +222,9 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(btnChangeFine, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnChangeFine, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnChangeFine1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
@@ -273,6 +295,55 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
         frame11.setVisible(true);
     }//GEN-LAST:event_btnChangeFineActionPerformed
 
+    private void btnChangeFine1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeFine1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnChangeFine1MouseEntered
+
+    private void btnChangeFine1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChangeFine1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnChangeFine1MouseExited
+
+    private void btnChangeFine1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeFine1ActionPerformed
+        // TODO add your handling code here:
+        int i = jTable1.getSelectedRow();
+        
+        
+        
+        if (i != -1){
+            String id = String.valueOf(jTable1.getValueAt(i, 0));
+
+            ManageData.getManageData().allBook.get(id).setWho_is_borrowing_this_book(null);
+            ManageData.getManageData().allBook.get(id).setStartBorrowed(null);
+            ManageData.getManageData().allBook.get(id).setEndBorrowedPrediction(null);
+            ManageData.getManageData().allBook.get(id).setAvailable("Yes");
+            ManageData.getManageData().saveAllBook();
+        
+            ManageData.getManageData().setBook_choosen(null);
+            JOptionPane.showMessageDialog(null, "Return book successfully!\nPress \"Back\" to return!");
+            
+            //System.out.println(ManageData.getManageData().getUsername_choosen());
+            
+            DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+            
+            model.setRowCount(0);
+            //System.out.println(ManageData.getManageData().getUsername_choosen());
+            String username = ManageData.getManageData().getUsername_choosen();
+            
+            
+            
+            
+            System.out.println(username);
+            System.out.println(ManageData.getManageData().allBook.values());
+            for(Book value: ManageData.getManageData().allBook.values()){
+                if (value.getWho_is_borrowing_this_book()!=null){
+                    if (value.getWho_is_borrowing_this_book().equals(username)){
+                        model.addRow( new Object[]{ value.getIdBook(), value.getTitle(), value.getStartBorrowed(), value.getEndBorrowedPrediction() } );
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_btnChangeFine1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -311,6 +382,7 @@ public class Frame11_ManageStudents_Detail extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnChangeFine;
+    private javax.swing.JButton btnChangeFine1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

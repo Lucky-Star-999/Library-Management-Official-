@@ -38,7 +38,7 @@ public class Main {
         Frame18_ForgotPassword frame18 = new Frame18_ForgotPassword();
         Frame19_ForgotPassword_Student frame19 = new Frame19_ForgotPassword_Student();
         Frame20_AddBook frame20 = new Frame20_AddBook();
-                
+        Frame21_StudentBorrowBook frame21 = new Frame21_StudentBorrowBook();        
                 
                 
         

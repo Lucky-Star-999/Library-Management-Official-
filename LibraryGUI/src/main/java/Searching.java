@@ -37,6 +37,9 @@ public class Searching {
     //key = idBook, value = Book
     HashMap<String, Book> searchBookById = new HashMap<>();
     
+    //Merge search by ID and name of book
+    HashMap<String, Book> searchBookByNameAndId = new HashMap<>();
+    
     
     
     //This is a Singleton
@@ -127,6 +130,16 @@ public class Searching {
                 this.searchBookById.get(id).setAvailable(value.getAvailable());
             }
         }
+    }
+    
+    
+    //Search book by name and ID
+    public void mergeSearchBook(String str){
+        this.searchBookByNameAndId.clear();
+        translateToSearchBookById(str);
+        translateToSearchBookByName(str);
+        searchBookByNameAndId.putAll(searchBookByName);
+        searchBookByNameAndId.putAll(searchBookById);
     }
         
 }

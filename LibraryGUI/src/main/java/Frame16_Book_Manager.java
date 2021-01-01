@@ -86,6 +86,7 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         btnDelete = new javax.swing.JButton();
         textFieldImage = new javax.swing.JLabel();
+        btnAddNewBook1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,7 +103,7 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
 
         jTextField_Search.setFont(new java.awt.Font("Avenir Next", 0, 16)); // NOI18N
         jTextField_Search.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField_Search.setText("Search title, author or catagory");
+        jTextField_Search.setText("Search title or ID");
         jTextField_Search.setBorder(null);
         jTextField_Search.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -238,6 +239,22 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
             }
         });
 
+        btnAddNewBook1.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
+        btnAddNewBook1.setText("Someone Borrow");
+        btnAddNewBook1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAddNewBook1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAddNewBook1MouseExited(evt);
+            }
+        });
+        btnAddNewBook1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddNewBook1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -259,7 +276,9 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnShowList, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnAddNewBook))
+                                .addComponent(btnAddNewBook)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnAddNewBook1))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 672, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
@@ -301,7 +320,8 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddNewBook, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnShowList, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAddNewBook1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
@@ -388,6 +408,11 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
 
     private void btnShowListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowListActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        model.setRowCount(0);
+        for(Book value: ManageData.getManageData().allBook.values()){
+            model.addRow( new Object[]{ value.getIdBook(), value.getCategory(), value.getTitle(), value.getAuthor(), value.getAvailable() } );
+        }
     }//GEN-LAST:event_btnShowListActionPerformed
 
     private void btnSearchMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchMouseExited
@@ -418,6 +443,31 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
+        String search = jTextField_Search.getText();
+        
+        //Searching.getSearching().translateToSearchStudentByName(search);
+        //Searching.getSearching().translateToSearchStudentById(search);
+        
+        //New methods
+        Searching.getSearching().mergeSearchBook(search);
+        
+        
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        
+        model.setRowCount(0);
+        
+        /*for(Student value: Searching.getSearching().searchStudentByName.values()){
+            model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), "No" } );
+        }
+
+        for(Student value: Searching.getSearching().searchStudentById.values()){
+            model.addRow( new Object[]{ value.getIdStudent(), value.getFullName(), value.getPhone(), value.getUsername(), "No" } );
+        }*/
+        
+        
+        for(Book value: Searching.getSearching().searchBookByNameAndId.values()){
+            model.addRow( new Object[]{ value.getIdBook(), value.getCategory(), value.getTitle(), value.getAuthor(), value.getAvailable() } );
+        }
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnDeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseEntered
@@ -476,6 +526,28 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void btnAddNewBook1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddNewBook1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddNewBook1MouseEntered
+
+    private void btnAddNewBook1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddNewBook1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddNewBook1MouseExited
+
+    private void btnAddNewBook1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNewBook1ActionPerformed
+        // TODO add your handling code here:
+        int i = jTable1.getSelectedRow();
+        if(i != -1){
+            String id = String.valueOf(jTable1.getValueAt(i, 0));
+            ManageData.getManageData().setBook_choosen(id);
+            
+        
+            this.dispose();
+            Frame21_StudentBorrowBook frame21 = new Frame21_StudentBorrowBook();
+            frame21.setVisible(true);
+        }
+    }//GEN-LAST:event_btnAddNewBook1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -513,6 +585,7 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddNewBook;
+    private javax.swing.JButton btnAddNewBook1;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSearch;
