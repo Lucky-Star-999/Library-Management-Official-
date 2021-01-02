@@ -40,6 +40,22 @@ public class Frame13_SeeBorrowedBooks extends javax.swing.JFrame {
         im = im.getScaledInstance(btnBack.getWidth(), btnBack.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon ii = new ImageIcon(im);
         btnBack.setIcon(ii);
+        
+        //Set borrowed books
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        
+        String username = ManageData.getManageData().getWho_is_using_this_program();
+        
+        for(Book value: ManageData.getManageData().allBook.values()){
+            if (value.getWho_is_borrowing_this_book().equals(username)){
+                model.addRow( new Object[]{ value.getIdBook(), value.getTitle(), value.getStartBorrowed(), value.getEndBorrowedPrediction() } );
+            }
+        }
+        
+        if (username != null){
+            String fine = String.valueOf(ManageData.getManageData().allStudent.get(username).getFine());
+            labelFine.setText(fine);
+        }
 
     }
 
@@ -54,7 +70,7 @@ public class Frame13_SeeBorrowedBooks extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        labelFine = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -67,9 +83,9 @@ public class Frame13_SeeBorrowedBooks extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("0.00");
+        labelFine.setFont(new java.awt.Font("Avenir", 0, 24)); // NOI18N
+        labelFine.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelFine.setText("0.00");
 
         btnBack.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
         btnBack.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Documents\\GitHub\\Library-Management-Official-\\LibraryGUI\\src\\main\\java\\com\\mycompany\\librarygui\\Library_Icons\\icons8-back_1.png")); // NOI18N
@@ -93,10 +109,7 @@ public class Frame13_SeeBorrowedBooks extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("Avenir", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"", "", "", ""},
-                {"", "", "", ""},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Book ID", "Title", "Date borrowed", "Due date"
@@ -126,7 +139,7 @@ public class Frame13_SeeBorrowedBooks extends javax.swing.JFrame {
                         .addGap(113, 113, 113)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel1)
+                        .addComponent(labelFine)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(67, 67, 67)
@@ -151,7 +164,7 @@ public class Frame13_SeeBorrowedBooks extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel1))
+                    .addComponent(labelFine))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
@@ -241,12 +254,12 @@ public class Frame13_SeeBorrowedBooks extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel labelFine;
     // End of variables declaration//GEN-END:variables
 }

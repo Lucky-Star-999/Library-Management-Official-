@@ -5,7 +5,7 @@ theboost1305@gmail.com
 0933348791
 ITITIU19023
 0
-null
+src/main/java/avatar/Cute Star.png
 user3
 123456
 User 3

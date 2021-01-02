@@ -311,6 +311,9 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        Frame19_ForgotPassword_Student frame19 = new Frame19_ForgotPassword_Student();
+        frame19.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
