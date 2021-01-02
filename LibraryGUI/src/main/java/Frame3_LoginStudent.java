@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import java.awt.event.KeyEvent;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -61,6 +62,11 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
                 textFieldUsernameActionPerformed(evt);
             }
         });
+        textFieldUsername.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                textFieldUsernameKeyPressed(evt);
+            }
+        });
 
         jButton5.setBackground(new java.awt.Color(0, 122, 255));
         jButton5.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
@@ -77,6 +83,11 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
+            }
+        });
+        jButton5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton5KeyPressed(evt);
             }
         });
 
@@ -131,6 +142,11 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
         passwordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordFieldActionPerformed(evt);
+            }
+        });
+        passwordField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordFieldKeyPressed(evt);
             }
         });
 
@@ -295,6 +311,60 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordFieldActionPerformed
+
+    private void jButton5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton5KeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String username = textFieldUsername.getText();
+            String pass = String.valueOf(passwordField.getPassword());
+            if(ManageData.getManageData().checkLoginStudent(ManageData.getManageData().allStudent, username, pass)==1){
+                ManageData.getManageData().setWho_is_using_this_program(username);
+                this.dispose();
+                Frame7_ProfileStudent frame7 = new Frame7_ProfileStudent();
+                frame7.setVisible(true);
+                ManageData.getManageData().setType_of_user_using_this_program("student");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+            }
+        }
+    }//GEN-LAST:event_jButton5KeyPressed
+
+    private void textFieldUsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldUsernameKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String username = textFieldUsername.getText();
+            String pass = String.valueOf(passwordField.getPassword());
+            if(ManageData.getManageData().checkLoginStudent(ManageData.getManageData().allStudent, username, pass)==1){
+                ManageData.getManageData().setWho_is_using_this_program(username);
+                this.dispose();
+                Frame7_ProfileStudent frame7 = new Frame7_ProfileStudent();
+                frame7.setVisible(true);
+                ManageData.getManageData().setType_of_user_using_this_program("student");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+            }
+        }
+    }//GEN-LAST:event_textFieldUsernameKeyPressed
+
+    private void passwordFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordFieldKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String username = textFieldUsername.getText();
+            String pass = String.valueOf(passwordField.getPassword());
+            if(ManageData.getManageData().checkLoginStudent(ManageData.getManageData().allStudent, username, pass)==1){
+                ManageData.getManageData().setWho_is_using_this_program(username);
+                this.dispose();
+                Frame7_ProfileStudent frame7 = new Frame7_ProfileStudent();
+                frame7.setVisible(true);
+                ManageData.getManageData().setType_of_user_using_this_program("student");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+            }
+        }
+    }//GEN-LAST:event_passwordFieldKeyPressed
                         
     /**
      * @param args the command line arguments

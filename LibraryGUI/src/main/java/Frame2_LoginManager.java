@@ -1,5 +1,6 @@
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import java.awt.event.KeyEvent;
 
 public class Frame2_LoginManager extends javax.swing.JFrame {
 
@@ -38,6 +39,11 @@ public class Frame2_LoginManager extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 113, 164));
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
+        bg.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                bgKeyPressed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Avenir Next", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -48,6 +54,11 @@ public class Frame2_LoginManager extends javax.swing.JFrame {
         textFieldUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldUsernameActionPerformed(evt);
+            }
+        });
+        textFieldUsername.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                textFieldUsernameKeyPressed(evt);
             }
         });
 
@@ -66,6 +77,11 @@ public class Frame2_LoginManager extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton1KeyPressed(evt);
             }
         });
 
@@ -120,6 +136,11 @@ public class Frame2_LoginManager extends javax.swing.JFrame {
         passwordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordFieldActionPerformed(evt);
+            }
+        });
+        passwordField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordFieldKeyPressed(evt);
             }
         });
 
@@ -321,6 +342,73 @@ public class Frame2_LoginManager extends javax.swing.JFrame {
         Frame7_ProfileStudent frame7 = new Frame7_ProfileStudent();
         frame7.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String username = textFieldUsername.getText();
+            String pass = String.valueOf(passwordField.getPassword());
+            //System.out.println(username);
+            //System.out.println(pass);
+            //System.out.println(ManageData.getManageData().allManager);
+            if(ManageData.getManageData().checkLoginManager(ManageData.getManageData().allManager, username, pass)==1){
+                ManageData.getManageData().setWho_is_using_this_program(username);
+                this.dispose();
+                Frame6_ProfileManager frame6 = new Frame6_ProfileManager();
+                frame6.setVisible(true);
+                ManageData.getManageData().setType_of_user_using_this_program("manager");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+            }
+        }
+    }//GEN-LAST:event_jButton1KeyPressed
+
+    private void textFieldUsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldUsernameKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String username = textFieldUsername.getText();
+            String pass = String.valueOf(passwordField.getPassword());
+            //System.out.println(username);
+            //System.out.println(pass);
+            //System.out.println(ManageData.getManageData().allManager);
+            if(ManageData.getManageData().checkLoginManager(ManageData.getManageData().allManager, username, pass)==1){
+                ManageData.getManageData().setWho_is_using_this_program(username);
+                this.dispose();
+                Frame6_ProfileManager frame6 = new Frame6_ProfileManager();
+                frame6.setVisible(true);
+                ManageData.getManageData().setType_of_user_using_this_program("manager");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+            }
+        }
+    }//GEN-LAST:event_textFieldUsernameKeyPressed
+
+    private void passwordFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordFieldKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String username = textFieldUsername.getText();
+            String pass = String.valueOf(passwordField.getPassword());
+            //System.out.println(username);
+            //System.out.println(pass);
+            //System.out.println(ManageData.getManageData().allManager);
+            if(ManageData.getManageData().checkLoginManager(ManageData.getManageData().allManager, username, pass)==1){
+                ManageData.getManageData().setWho_is_using_this_program(username);
+                this.dispose();
+                Frame6_ProfileManager frame6 = new Frame6_ProfileManager();
+                frame6.setVisible(true);
+                ManageData.getManageData().setType_of_user_using_this_program("manager");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+            }
+        }
+    }//GEN-LAST:event_passwordFieldKeyPressed
+
+    private void bgKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bgKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bgKeyPressed
 
     /**
      * @param args the command line arguments
