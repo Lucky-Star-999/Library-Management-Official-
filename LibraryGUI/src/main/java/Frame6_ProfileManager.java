@@ -69,7 +69,7 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
         textFieldImage = new javax.swing.JLabel();
         textFieldEmail = new javax.swing.JTextField();
         textFieldPhone = new javax.swing.JTextField();
-        btnLibrary1 = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -190,19 +190,19 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
             }
         });
 
-        btnLibrary1.setFont(new java.awt.Font("Avenir Next", 1, 20)); // NOI18N
-        btnLibrary1.setText("Delete Account");
-        btnLibrary1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnDelete.setFont(new java.awt.Font("Avenir Next", 1, 20)); // NOI18N
+        btnDelete.setText("Delete Account");
+        btnDelete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnLibrary1MouseEntered(evt);
+                btnDeleteMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnLibrary1MouseExited(evt);
+                btnDeleteMouseExited(evt);
             }
         });
-        btnLibrary1.addActionListener(new java.awt.event.ActionListener() {
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLibrary1ActionPerformed(evt);
+                btnDeleteActionPerformed(evt);
             }
         });
 
@@ -218,7 +218,7 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addComponent(btnLibrary, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnLibrary1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addComponent(textFieldImage, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(100, 100, 100)
@@ -263,7 +263,7 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
                 .addGap(60, 60, 60)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLibrary, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLibrary1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnLogOut, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
@@ -389,15 +389,19 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
         frame8.setVisible(true);
     }//GEN-LAST:event_btnEditActionPerformed
 
-    private void btnLibrary1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLibrary1MouseEntered
+    private void btnDeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnLibrary1MouseEntered
+        btnDelete.setBackground(new Color(255, 59, 48));
+        btnDelete.setForeground(new Color(255, 255, 255));
+    }//GEN-LAST:event_btnDeleteMouseEntered
 
-    private void btnLibrary1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLibrary1MouseExited
+    private void btnDeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnLibrary1MouseExited
+        btnDelete.setBackground(new Color(255, 255, 255));
+        btnDelete.setForeground(new Color(0, 0, 0));
+    }//GEN-LAST:event_btnDeleteMouseExited
 
-    private void btnLibrary1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibrary1ActionPerformed
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
         String username = ManageData.getManageData().getWho_is_using_this_program();
         /*ManageData.getManageData().allManager.remove(username);
@@ -418,7 +422,7 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
             Frame2_LoginManager frame2 = new Frame2_LoginManager();
             frame2.setVisible(true);
         }
-    }//GEN-LAST:event_btnLibrary1ActionPerformed
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -456,9 +460,9 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnLibrary;
-    private javax.swing.JButton btnLibrary1;
     private javax.swing.JButton btnLogOut;
     private javax.swing.JButton btnManage;
     private javax.swing.JLabel jLabel1;

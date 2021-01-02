@@ -35,9 +35,9 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
         bg1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         textFieldUsername = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btnLogin = new javax.swing.JButton();
+        btnCreate = new javax.swing.JButton();
+        btnForgotPW = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         passwordField = new javax.swing.JPasswordField();
@@ -68,64 +68,64 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(0, 122, 255));
-        jButton5.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Login");
-        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnLogin.setBackground(new java.awt.Color(0, 122, 255));
+        btnLogin.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogin.setText("Login");
+        btnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton5MouseEntered(evt);
+                btnLoginMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton5MouseExited(evt);
+                btnLoginMouseExited(evt);
             }
         });
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnLoginActionPerformed(evt);
             }
         });
-        jButton5.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnLogin.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jButton5KeyPressed(evt);
+                btnLoginKeyPressed(evt);
             }
         });
 
-        jButton6.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(0, 122, 255));
-        jButton6.setText("Create an account");
-        jButton6.setBorderPainted(false);
-        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCreate.setFont(new java.awt.Font("Avenir Next", 1, 24)); // NOI18N
+        btnCreate.setForeground(new java.awt.Color(0, 122, 255));
+        btnCreate.setText("Create an account");
+        btnCreate.setBorderPainted(false);
+        btnCreate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton6MouseEntered(evt);
+                btnCreateMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton6MouseExited(evt);
+                btnCreateMouseExited(evt);
             }
         });
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnCreateActionPerformed(evt);
             }
         });
 
-        jButton7.setFont(new java.awt.Font("Avenir Next", 0, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(64, 156, 255));
-        jButton7.setText("Forgot password?");
-        jButton7.setBorder(null);
-        jButton7.setBorderPainted(false);
-        jButton7.setContentAreaFilled(false);
-        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnForgotPW.setFont(new java.awt.Font("Avenir Next", 0, 14)); // NOI18N
+        btnForgotPW.setForeground(new java.awt.Color(64, 156, 255));
+        btnForgotPW.setText("Forgot password?");
+        btnForgotPW.setBorder(null);
+        btnForgotPW.setBorderPainted(false);
+        btnForgotPW.setContentAreaFilled(false);
+        btnForgotPW.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton7MouseEntered(evt);
+                btnForgotPWMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton7MouseExited(evt);
+                btnForgotPWMouseExited(evt);
             }
         });
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnForgotPW.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnForgotPWActionPerformed(evt);
             }
         });
 
@@ -167,9 +167,9 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
             .addGroup(bg1Layout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addGroup(bg1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton7)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnForgotPW)
+                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(bg1Layout.createSequentialGroup()
                         .addComponent(btnBack2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -203,11 +203,11 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7)
+                .addComponent(btnForgotPW)
                 .addGap(67, 67, 67)
-                .addComponent(jButton5)
+                .addComponent(btnLogin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton6)
+                .addComponent(btnCreate)
                 .addGap(50, 50, 50))
         );
 
@@ -247,17 +247,17 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldUsernameActionPerformed
 
-    private void jButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseEntered
+    private void btnLoginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseEntered
         // TODO add your handling code here:
-        jButton5.setBackground(new Color(0, 64, 221));
-    }//GEN-LAST:event_jButton5MouseEntered
+        btnLogin.setBackground(new Color(0, 64, 221));
+    }//GEN-LAST:event_btnLoginMouseEntered
 
-    private void jButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseExited
+    private void btnLoginMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseExited
         // TODO add your handling code here:
-        jButton5.setBackground(new Color(0, 122, 255));
-    }//GEN-LAST:event_jButton5MouseExited
+        btnLogin.setBackground(new Color(0, 122, 255));
+    }//GEN-LAST:event_btnLoginMouseExited
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         String username = textFieldUsername.getText();
         String pass = String.valueOf(passwordField.getPassword());
@@ -278,49 +278,49 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
         }
         
         
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void jButton6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseEntered
+    private void btnCreateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCreateMouseEntered
         // TODO add your handling code here:
-        jButton6.setBackground(new Color(20, 142, 255));
-        jButton6.setForeground(new Color(255, 255, 255));
-    }//GEN-LAST:event_jButton6MouseEntered
+        btnCreate.setBackground(new Color(20, 142, 255));
+        btnCreate.setForeground(new Color(255, 255, 255));
+    }//GEN-LAST:event_btnCreateMouseEntered
 
-    private void jButton6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseExited
+    private void btnCreateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCreateMouseExited
         // TODO add your handling code here:
-        jButton6.setBackground(new Color(255, 255, 255));
-        jButton6.setForeground(new Color(0,122,255));
-    }//GEN-LAST:event_jButton6MouseExited
+        btnCreate.setBackground(new Color(255, 255, 255));
+        btnCreate.setForeground(new Color(0,122,255));
+    }//GEN-LAST:event_btnCreateMouseExited
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
         this.dispose();
         Frame5_RegisterStudent frame5 = new Frame5_RegisterStudent();
         frame5.setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnCreateActionPerformed
 
-    private void jButton7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseEntered
+    private void btnForgotPWMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnForgotPWMouseEntered
         // TODO add your handling code here:
-        jButton7.setForeground(new Color(0, 122, 255));
-    }//GEN-LAST:event_jButton7MouseEntered
+        btnForgotPW.setForeground(new Color(0, 122, 255));
+    }//GEN-LAST:event_btnForgotPWMouseEntered
 
-    private void jButton7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseExited
+    private void btnForgotPWMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnForgotPWMouseExited
         // TODO add your handling code here:
-        jButton7.setForeground(new Color(64, 156, 255));
-    }//GEN-LAST:event_jButton7MouseExited
+        btnForgotPW.setForeground(new Color(64, 156, 255));
+    }//GEN-LAST:event_btnForgotPWMouseExited
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnForgotPWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnForgotPWActionPerformed
         // TODO add your handling code here:
         this.dispose();
         Frame19_ForgotPassword_Student frame19 = new Frame19_ForgotPassword_Student();
         frame19.setVisible(true);
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btnForgotPWActionPerformed
 
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordFieldActionPerformed
 
-    private void jButton5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton5KeyPressed
+    private void btnLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnLoginKeyPressed
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER){
             String username = textFieldUsername.getText();
@@ -336,7 +336,7 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
             }
         }
-    }//GEN-LAST:event_jButton5KeyPressed
+    }//GEN-LAST:event_btnLoginKeyPressed
 
     private void textFieldUsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldUsernameKeyPressed
         // TODO add your handling code here:
@@ -422,9 +422,9 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg1;
     private javax.swing.JButton btnBack2;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton btnCreate;
+    private javax.swing.JButton btnForgotPW;
+    private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

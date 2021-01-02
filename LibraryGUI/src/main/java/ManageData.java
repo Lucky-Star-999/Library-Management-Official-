@@ -118,12 +118,6 @@ public class ManageData {
     
 
     
-
-    
-
-
-    
-    
     
     //Save the manager list in a file
     public void saveAllManager(){
