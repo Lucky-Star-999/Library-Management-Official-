@@ -1,4 +1,5 @@
 
+import java.awt.Desktop;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,6 +17,8 @@ import javax.swing.JOptionPane;
 import java.time.Period;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /*
@@ -434,12 +437,39 @@ public class ManageData {
     }
     
     
-    public void openPdfFile(String path){
+    /*public void openPdfFile(String path){
         try{
             Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " + path);
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(null, "This file is not supported by the system");
+            Desktop desktop = Desktop.getDesktop();
+            if (desktop.isSupported(Desktop.Action.OPEN)) {
+                try {
+                    desktop.open(new File(path));
+                } catch (IOException ex) {
+                    //Logger.getLogger(ManageData.class.getName()).log(Level.SEVERE, null, ex);
+                    JOptionPane.showMessageDialog(null, "This file is not supported by the system");
+                }
+            } 
+            else {
+                System.out.println("Open is not supported");
+            }
+            //JOptionPane.showMessageDialog(null, "This file is not supported by the system");
         }
+    }*/
+    
+    public void openPdfFile(String path){
+            Desktop desktop = Desktop.getDesktop();
+            if (desktop.isSupported(Desktop.Action.OPEN)) {
+                try {
+                    desktop.open(new File(path));
+                } catch (IOException ex) {
+                    //Logger.getLogger(ManageData.class.getName()).log(Level.SEVERE, null, ex);
+                    JOptionPane.showMessageDialog(null, "This file is not supported by the system");
+                }
+            } 
+            else {
+                System.out.println("Open is not supported");
+            }
     }
 }
