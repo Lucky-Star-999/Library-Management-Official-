@@ -1,234 +1,81 @@
-010
-
-
-
+001
+Product design and sustainability
+Science
+Jane Penty
 null
 null
 Yes
 null
-null
-011
-
-
-
-null
-null
-Yes
-null
-null
-012
-
-
-
-null
-null
-Yes
-null
-null
-013
-
-
-
-null
-null
-Yes
-null
-null
-014
-
-
-
-null
-null
-Yes
-null
-null
-015
-
-
-
-null
-null
-Yes
-null
-null
-016
-
-
-
-null
-null
-Yes
-null
-null
-017
-
-
-
-null
-null
-Yes
-null
-null
-018
-
-
-
-null
-null
-Yes
-null
-null
-019
-
-
-
-null
-null
-Yes
-null
-null
-020
-
-
-
-null
-null
-Yes
-null
-null
-021
-
-
-
-null
-null
-Yes
-null
-null
-022
-
-
-
-null
-null
-Yes
-null
-null
-023
-
-
-
-null
-null
-Yes
-null
-null
+src/main/java/imageBook/001 - Product design and sustainability - Jane Penty.jpg
 002
- Lol
-Thriller
- AuthorTest
+The citizen's guide to climate success
+Science
+Mark Jaccard
 null
 null
 Yes
 null
-null
-024
-
-
-
-null
-null
-Yes
-null
-null
+src/main/java/imageBook/002 - The citizen's guide to climate success - Mark Jaccard.jpg
 003
-hi
-qhi1
-qqqq
+Rethinking business responsibility in a global context
+Science
+ - Bodo B. Schlegelmilch and Ilona Szochcs (Eds.)
 null
 null
 Yes
 null
-null
-025
-
-
-
-null
-null
-Yes
-null
-null
+src/main/java/imageBook/003 - Rethinking business responsibility in a global context - Bodo B. Schlegelmilch and Ilona Szochcs (Eds.).jpg
 004
-
-a
-
+The origins of radical environmental reforms
+Science
+Thomas K. Rudel
 null
 null
 Yes
 null
-null
-026
-
-
-
-null
-null
-Yes
-null
-null
+src/main/java/imageBook/004 - The origins of radical environmental reforms - Thomas K. Rudel.jpg
 005
-aaaa
-Thriller
-Sun
+Solving the wicked problem
+Science
+Elina Narvanen et al (Eds.)
 null
 null
 Yes
 null
-null
-027
-
-
-
-null
-null
-Yes
-null
-null
+src/main/java/imageBook/005 - Solving the wicked problem - Elina Narvanen et al (Eds.).jpg
 006
-aaaa
-aa
-aaaaaa
+Hyperbole And A Half
+Funny
+Alexandra Brosh
 null
 null
 Yes
 null
-null
+src/main/java/imageBook/006 - Hyperbole And A Half - Alexandra Brosh.jpg
 007
-
-
-
+Three Men in a Boat
+Funny
+Jerome K. Jerome
 null
 null
 Yes
 null
-null
+src/main/java/imageBook/007 - Three Men in a Boat - Jerome K. Jerome.jpg
 008
-
-
-
+The Silent Patient
+Thriller
+Alex Michaelides
 null
 null
 Yes
 null
-null
+src/main/java/imageBook/008 - The Silent Patient - Alex Michaelides.jpg
 009
-
-
-
+Before I Go to Sleep
+Thriller
+S. J. Watson
 null
 null
 Yes
 null
-null
+src/main/java/imageBook/009 - Before I Go to Sleep - S. J. Watson.jpg

@@ -220,6 +220,11 @@ public class Frame14_Book_Student extends javax.swing.JFrame {
                 "Book ID", "Category", "Title", "Author", "Availability"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -443,6 +448,27 @@ public class Frame14_Book_Student extends javax.swing.JFrame {
             model.addRow( new Object[]{ value.getIdBook(), value.getCategory(), value.getTitle(), value.getAuthor(), value.getAvailable() } );
         }
     }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        int i = jTable1.getSelectedRow();
+        if (i != -1){
+            String book = String.valueOf(jTable1.getValueAt(i, 0));
+            ManageData.getManageData().setBook_choosen(book);
+
+            String linkAvatar = ManageData.getManageData().allBook.get(book).getLink();
+            
+            Image im = Toolkit.getDefaultToolkit().createImage(linkAvatar);
+            im = im.getScaledInstance(textFieldImage.getWidth(), textFieldImage.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon ii = new ImageIcon(im);
+            
+            if (linkAvatar==null){
+                textFieldImage.setText("");
+            }
+            
+            textFieldImage.setIcon(ii);
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
