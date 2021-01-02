@@ -72,6 +72,7 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
         textFieldPhone = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         textFieldId = new javax.swing.JTextField();
+        btnLibrary1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -205,6 +206,22 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
             }
         });
 
+        btnLibrary1.setFont(new java.awt.Font("Avenir Next", 1, 20)); // NOI18N
+        btnLibrary1.setText("Delete Account");
+        btnLibrary1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnLibrary1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnLibrary1MouseExited(evt);
+            }
+        });
+        btnLibrary1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLibrary1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -236,8 +253,10 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnLibrary, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnManage, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(298, 298, 298)
-                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(248, 248, 248)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnLibrary1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(btnLogOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(100, 100, 100))
         );
         jPanel1Layout.setVerticalGroup(
@@ -263,7 +282,9 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(textFieldPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(166, 166, 166)
+                        .addGap(108, 108, 108)
+                        .addComponent(btnLibrary1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(textFieldImage, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -398,6 +419,35 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
         frame15.setVisible(true);        
     }//GEN-LAST:event_btnEditActionPerformed
 
+    private void btnLibrary1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLibrary1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLibrary1MouseEntered
+
+    private void btnLibrary1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLibrary1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLibrary1MouseExited
+
+    private void btnLibrary1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibrary1ActionPerformed
+        // TODO add your handling code here:
+        String username = ManageData.getManageData().getWho_is_using_this_program();
+        //ManageData.getManageData().allStudent.remove(username);
+        //ManageData.getManageData().saveAllStudent();
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog (null, "Do you want to delete your account?\nAre you sure?","Warning",dialogButton);
+        if(dialogResult == JOptionPane.YES_OPTION){
+            // Saving code here
+            ManageData.getManageData().allStudent.remove(username);
+            ManageData.getManageData().saveAllStudent();
+            this.dispose();
+            Frame3_LoginStudent frame3 = new Frame3_LoginStudent();
+            frame3.setVisible(true);
+        }
+        
+        /*this.dispose();
+        Frame3_LoginStudent frame3 = new Frame3_LoginStudent();
+        frame3.setVisible(true);*/
+    }//GEN-LAST:event_btnLibrary1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -436,6 +486,7 @@ public class Frame7_ProfileStudent extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnLibrary;
+    private javax.swing.JButton btnLibrary1;
     private javax.swing.JButton btnLogOut;
     private javax.swing.JButton btnManage;
     private javax.swing.JLabel jLabel1;

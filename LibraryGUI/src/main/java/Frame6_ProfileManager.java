@@ -69,6 +69,7 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
         textFieldImage = new javax.swing.JLabel();
         textFieldEmail = new javax.swing.JTextField();
         textFieldPhone = new javax.swing.JTextField();
+        btnLibrary1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -189,6 +190,22 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
             }
         });
 
+        btnLibrary1.setFont(new java.awt.Font("Avenir Next", 1, 20)); // NOI18N
+        btnLibrary1.setText("Delete Account");
+        btnLibrary1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnLibrary1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnLibrary1MouseExited(evt);
+            }
+        });
+        btnLibrary1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLibrary1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -196,8 +213,12 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnLibrary, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(btnLibrary, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnLibrary1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addComponent(textFieldImage, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(100, 100, 100)
@@ -213,9 +234,8 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 648, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(btnManage, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(298, 298, 298)
-                            .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(248, 248, 248)
+                            .addComponent(btnLogOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(100, 100, 100))
         );
         jPanel1Layout.setVerticalGroup(
@@ -241,7 +261,9 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEdit)
                 .addGap(60, 60, 60)
-                .addComponent(btnLibrary, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLibrary, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLibrary1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnLogOut, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
@@ -367,6 +389,37 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
         frame8.setVisible(true);
     }//GEN-LAST:event_btnEditActionPerformed
 
+    private void btnLibrary1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLibrary1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLibrary1MouseEntered
+
+    private void btnLibrary1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLibrary1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLibrary1MouseExited
+
+    private void btnLibrary1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibrary1ActionPerformed
+        // TODO add your handling code here:
+        String username = ManageData.getManageData().getWho_is_using_this_program();
+        /*ManageData.getManageData().allManager.remove(username);
+        ManageData.getManageData().saveAllManager();
+        
+        this.dispose();
+        Frame2_LoginManager frame2 = new Frame2_LoginManager();
+        frame2.setVisible(true);*/
+        
+        
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog (null, "Do you want to delete your account?\nAre you sure?","Warning",dialogButton);
+        if(dialogResult == JOptionPane.YES_OPTION){
+            // Saving code here
+            ManageData.getManageData().allManager.remove(username);
+            ManageData.getManageData().saveAllManager();
+            this.dispose();
+            Frame2_LoginManager frame2 = new Frame2_LoginManager();
+            frame2.setVisible(true);
+        }
+    }//GEN-LAST:event_btnLibrary1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -405,6 +458,7 @@ public class Frame6_ProfileManager extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnLibrary;
+    private javax.swing.JButton btnLibrary1;
     private javax.swing.JButton btnLogOut;
     private javax.swing.JButton btnManage;
     private javax.swing.JLabel jLabel1;
