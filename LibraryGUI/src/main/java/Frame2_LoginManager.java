@@ -272,7 +272,12 @@ public class Frame2_LoginManager extends javax.swing.JFrame {
             ManageData.getManageData().setType_of_user_using_this_program("manager");
         }
         else{
-            JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+            if(username.equals("")){
+                JOptionPane.showMessageDialog(null, "Please enter your username!");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -359,7 +364,12 @@ public class Frame2_LoginManager extends javax.swing.JFrame {
                 ManageData.getManageData().setType_of_user_using_this_program("manager");
             }
             else{
-                JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+                if(username.equals("")){
+                    JOptionPane.showMessageDialog(null, "Please enter your username!");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+                }
             }
         }
     }//GEN-LAST:event_jButton1KeyPressed
@@ -380,7 +390,12 @@ public class Frame2_LoginManager extends javax.swing.JFrame {
                 ManageData.getManageData().setType_of_user_using_this_program("manager");
             }
             else{
-                JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+                if(username.equals("")){
+                    JOptionPane.showMessageDialog(null, "Please enter your username!");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+                }
             }
         }
     }//GEN-LAST:event_textFieldUsernameKeyPressed
@@ -401,7 +416,12 @@ public class Frame2_LoginManager extends javax.swing.JFrame {
                 ManageData.getManageData().setType_of_user_using_this_program("manager");
             }
             else{
-                JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+                if(username.equals("")){
+                    JOptionPane.showMessageDialog(null, "Please enter your username!");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+                }
             }
         }
     }//GEN-LAST:event_passwordFieldKeyPressed

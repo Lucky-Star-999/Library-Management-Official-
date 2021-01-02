@@ -269,7 +269,12 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
             ManageData.getManageData().setType_of_user_using_this_program("student");
         }
         else{
-            JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+            if(username.equals("")){
+                JOptionPane.showMessageDialog(null, "Please enter your username!");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+            }
         }
         
         
@@ -343,7 +348,12 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
                 ManageData.getManageData().setType_of_user_using_this_program("student");
             }
             else{
-                JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+                if(username.equals("")){
+                    JOptionPane.showMessageDialog(null, "Please enter your username!");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+                }
             }
         }
     }//GEN-LAST:event_textFieldUsernameKeyPressed
@@ -361,7 +371,12 @@ public class Frame3_LoginStudent extends javax.swing.JFrame {
                 ManageData.getManageData().setType_of_user_using_this_program("student");
             }
             else{
-                JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+                if(username.equals("")){
+                    JOptionPane.showMessageDialog(null, "Please enter your username!");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Wrong password, please type again!");
+                }
             }
         }
     }//GEN-LAST:event_passwordFieldKeyPressed
