@@ -21,6 +21,10 @@ public class Book {
     //Link image of the book
     private String link;
     
+    //Link pdf and audio of the book
+    private String linkPdf;
+    private String linkAudio;
+    
     
     //Consider who is borrowing this book
     private String who_is_borrowing_this_book = null;
@@ -96,6 +100,22 @@ public class Book {
 
     public void setWho_is_borrowing_this_book(String who_is_borrowing_this_book) {
         this.who_is_borrowing_this_book = who_is_borrowing_this_book;
+    }
+    
+    public String getLinkPdf() {
+        return linkPdf;
+    }
+
+    public void setLinkPdf(String linkPdf) {
+        this.linkPdf = linkPdf;
+    }
+    
+    public String getLinkAudio() {
+        return linkAudio;
+    }
+
+    public void setLinkAudio(String linkAudio) {
+        this.linkAudio = linkAudio;
     }
     //End of getters and setters
     

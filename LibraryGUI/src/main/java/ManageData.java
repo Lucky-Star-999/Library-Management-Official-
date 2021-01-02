@@ -240,6 +240,8 @@ public class ManageData {
                 info.write(String.format(value.getAvailable()+ "%n"));
                 info.write(String.format(value.getWho_is_borrowing_this_book()+ "%n"));
                 info.write(String.format(value.getLink()+ "%n"));
+                info.write(String.format(value.getLinkPdf()+ "%n"));
+                info.write(String.format(value.getLinkAudio()+ "%n"));
             }  
 	    } catch (IOException e) {
 	        e.printStackTrace();
@@ -256,18 +258,20 @@ public class ManageData {
             String id = "0";
 	    int length = content.size();
             if (length!=0){
-                for(int i=0; i<length/9; i++){
-                    id = content.get(9*i);
+                for(int i=0; i<length/11; i++){
+                    id = content.get(11*i);
                     this.allBook.put(id, new Book());
-                    this.allBook.get(id).setIdBook(content.get(9*i));
-                    this.allBook.get(id).setTitle(content.get(9*i+1));
-                    this.allBook.get(id).setCategory(content.get(9*i+2));
-                    this.allBook.get(id).setAuthor(content.get(9*i+3));
-                    this.allBook.get(id).setStartBorrowed(content.get(9*i+4));
-                    this.allBook.get(id).setEndBorrowedPrediction(content.get(9*i+5));
-                    this.allBook.get(id).setAvailable(content.get(9*i+6));
-                    this.allBook.get(id).setWho_is_borrowing_this_book(content.get(9*i+7));
-                    this.allBook.get(id).setLink(content.get(9*i+8));
+                    this.allBook.get(id).setIdBook(content.get(11*i));
+                    this.allBook.get(id).setTitle(content.get(11*i+1));
+                    this.allBook.get(id).setCategory(content.get(11*i+2));
+                    this.allBook.get(id).setAuthor(content.get(11*i+3));
+                    this.allBook.get(id).setStartBorrowed(content.get(11*i+4));
+                    this.allBook.get(id).setEndBorrowedPrediction(content.get(11*i+5));
+                    this.allBook.get(id).setAvailable(content.get(11*i+6));
+                    this.allBook.get(id).setWho_is_borrowing_this_book(content.get(11*i+7));
+                    this.allBook.get(id).setLink(content.get(11*i+8));
+                    this.allBook.get(id).setLinkPdf(content.get(11*i+9));
+                    this.allBook.get(id).setLinkAudio(content.get(11*i+10));
                 }
             }
 	} catch (IOException e) {

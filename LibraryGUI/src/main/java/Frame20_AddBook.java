@@ -59,11 +59,19 @@ public class Frame20_AddBook extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         textFieldAuthor = new javax.swing.JTextField();
-        textFieldId = new javax.swing.JTextField();
+        textFieldAudio = new javax.swing.JTextField();
         textFieldCategory = new javax.swing.JTextField();
         btnAddBook1 = new javax.swing.JButton();
         btnAddBook2 = new javax.swing.JButton();
         textFieldImage = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        textFieldPdf = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        textFieldId = new javax.swing.JTextField();
+        btnAddBook3 = new javax.swing.JButton();
+        btnAddBook4 = new javax.swing.JButton();
+        btnAddBook5 = new javax.swing.JButton();
+        btnAddBook6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,7 +127,7 @@ public class Frame20_AddBook extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Avenir", 1, 24)); // NOI18N
-        jLabel3.setText("Catagory");
+        jLabel3.setText("Category");
 
         jLabel4.setFont(new java.awt.Font("Avenir", 1, 24)); // NOI18N
         jLabel4.setText("Author");
@@ -135,11 +143,12 @@ public class Frame20_AddBook extends javax.swing.JFrame {
             }
         });
 
-        textFieldId.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
-        textFieldId.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        textFieldId.addActionListener(new java.awt.event.ActionListener() {
+        textFieldAudio.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
+        textFieldAudio.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        textFieldAudio.setEnabled(false);
+        textFieldAudio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldIdActionPerformed(evt);
+                textFieldAudioActionPerformed(evt);
             }
         });
 
@@ -183,6 +192,93 @@ public class Frame20_AddBook extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Avenir", 1, 24)); // NOI18N
+        jLabel6.setText("Pdf file");
+
+        textFieldPdf.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
+        textFieldPdf.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        textFieldPdf.setEnabled(false);
+        textFieldPdf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldPdfActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Avenir", 1, 24)); // NOI18N
+        jLabel7.setText("Audio");
+
+        textFieldId.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
+        textFieldId.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        textFieldId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldIdActionPerformed(evt);
+            }
+        });
+
+        btnAddBook3.setFont(new java.awt.Font("Avenir Next", 1, 16)); // NOI18N
+        btnAddBook3.setText("Import");
+        btnAddBook3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAddBook3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAddBook3MouseExited(evt);
+            }
+        });
+        btnAddBook3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddBook3ActionPerformed(evt);
+            }
+        });
+
+        btnAddBook4.setFont(new java.awt.Font("Avenir Next", 1, 16)); // NOI18N
+        btnAddBook4.setText("Delete");
+        btnAddBook4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAddBook4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAddBook4MouseExited(evt);
+            }
+        });
+        btnAddBook4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddBook4ActionPerformed(evt);
+            }
+        });
+
+        btnAddBook5.setFont(new java.awt.Font("Avenir Next", 1, 16)); // NOI18N
+        btnAddBook5.setText("Delete");
+        btnAddBook5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAddBook5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAddBook5MouseExited(evt);
+            }
+        });
+        btnAddBook5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddBook5ActionPerformed(evt);
+            }
+        });
+
+        btnAddBook6.setFont(new java.awt.Font("Avenir Next", 1, 16)); // NOI18N
+        btnAddBook6.setText("Import");
+        btnAddBook6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAddBook6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAddBook6MouseExited(evt);
+            }
+        });
+        btnAddBook6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddBook6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -192,36 +288,57 @@ public class Frame20_AddBook extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(60, 60, 60)
-                                    .addComponent(textFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addGap(99, 99, 99)
-                                    .addComponent(textFieldTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGap(59, 59, 59)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(btnAddBook)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(textFieldAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(48, 48, 48)
-                                .addComponent(textFieldCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(100, 100, 100)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(59, 59, 59)
+                                .addComponent(btnAddBook)
+                                .addGap(63, 63, 63)
+                                .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel7))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(53, 53, 53)
+                                                .addComponent(textFieldAudio))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(textFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel3)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(textFieldCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel5)
+                                            .addGap(94, 94, 94)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(textFieldAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(textFieldTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(textFieldPdf, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(0, 5, Short.MAX_VALUE)))
+                        .addGap(102, 102, 102)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textFieldImage, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnAddBook1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnAddBook2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(129, 129, 129))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(btnAddBook3, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(btnAddBook4, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(btnAddBook1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(btnAddBook2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(btnAddBook6, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(btnAddBook5, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(125, 125, 125))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(49, 49, 49))))
@@ -231,34 +348,50 @@ public class Frame20_AddBook extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(jLabel1)
-                .addGap(40, 40, 40)
+                .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(textFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40)
+                        .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(textFieldCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(42, 42, 42)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(textFieldTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
+                            .addComponent(textFieldTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(textFieldImage, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(textFieldAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(textFieldImage, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(textFieldAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(51, 51, 51))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAddBook2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAddBook1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(textFieldPdf, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAddBook4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAddBook3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)))
+                .addGap(3, 3, 3)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddBook1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAddBook2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(1, 1, 1)
+                    .addComponent(jLabel7)
+                    .addComponent(textFieldAudio, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAddBook5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAddBook6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddBook, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addGap(60, 60, 60))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -275,7 +408,7 @@ public class Frame20_AddBook extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -286,31 +419,12 @@ public class Frame20_AddBook extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-        Frame16_Book_Manager frame16 = new Frame16_Book_Manager();
-        frame16.setVisible(true);
-    }//GEN-LAST:event_btnCancelActionPerformed
-
-    private void btnCancelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseExited
-        // TODO add your handling code here:
-        btnCancel.setBackground(new Color(255, 255, 255));
-        btnCancel.setForeground(new Color(0, 0, 0));
-    }//GEN-LAST:event_btnCancelMouseExited
-
-    private void btnCancelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseEntered
-        // TODO add your handling code here:
-        btnCancel.setBackground(new Color(20, 142, 255));
-        btnCancel.setForeground(new Color(255, 255, 255));
-    }//GEN-LAST:event_btnCancelMouseEntered
 
     private void btnAddBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddBookActionPerformed
         // TODO add your handling code here:
@@ -332,7 +446,36 @@ public class Frame20_AddBook extends javax.swing.JFrame {
         
                 String path = ManageData.getManageData().getTemporaryAvatar();
                 ManageData.getManageData().allBook.get(id).setLink(path);
-        
+                
+                
+                //Set link pdf file
+                String path3 = textFieldPdf.getText();
+                File file = new File(path3);
+                String newPath = "src/main/java/pdfFiles/" + file.getName();
+                File file2 = new File(newPath);
+                ManageData.getManageData().allBook.get(id).setLinkPdf(newPath);
+                try{
+                    ManageData.getManageData().copyFileUsingChannel(file, file2);
+                }
+                catch (Exception e){
+                    System.out.println("");
+                }
+                
+                //Set link audio file
+                String path2 = textFieldAudio.getText();
+                File file3 = new File(path2);
+                String newPath2 = "src/main/java/audioFiles/" + file3.getName();
+                File file4 = new File(newPath2);
+                ManageData.getManageData().allBook.get(id).setLinkAudio(newPath2);
+                try{
+                    ManageData.getManageData().copyFileUsingChannel(file3, file4);
+                }
+                catch (Exception e){
+                    System.out.println("");
+                }
+                
+                
+                
                 ManageData.getManageData().saveAllBook();
                 JOptionPane.showMessageDialog(null, "Add book successfully!\nPress \"Cancel\" to return");
             }
@@ -375,9 +518,9 @@ public class Frame20_AddBook extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldAuthorActionPerformed
 
-    private void textFieldIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldIdActionPerformed
+    private void textFieldAudioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldAudioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldIdActionPerformed
+    }//GEN-LAST:event_textFieldAudioActionPerformed
 
     private void textFieldCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldCategoryActionPerformed
         // TODO add your handling code here:
@@ -449,6 +592,97 @@ public class Frame20_AddBook extends javax.swing.JFrame {
             textFieldImage.setIcon(ii);
     }//GEN-LAST:event_btnAddBook2ActionPerformed
 
+    private void textFieldPdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldPdfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldPdfActionPerformed
+
+    private void textFieldIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldIdActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Frame16_Book_Manager frame16 = new Frame16_Book_Manager();
+        frame16.setVisible(true);
+    }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void btnCancelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseExited
+        // TODO add your handling code here:
+        btnCancel.setBackground(new Color(255, 255, 255));
+        btnCancel.setForeground(new Color(0, 0, 0));
+    }//GEN-LAST:event_btnCancelMouseExited
+
+    private void btnCancelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseEntered
+        // TODO add your handling code here:
+        btnCancel.setBackground(new Color(20, 142, 255));
+        btnCancel.setForeground(new Color(255, 255, 255));
+    }//GEN-LAST:event_btnCancelMouseEntered
+
+    private void btnAddBook3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddBook3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddBook3MouseEntered
+
+    private void btnAddBook3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddBook3MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddBook3MouseExited
+
+    private void btnAddBook3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddBook3ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f = chooser.getSelectedFile();
+        if (f!=null){
+            String path = f.getAbsolutePath();
+            textFieldPdf.setText(path);
+        }
+    }//GEN-LAST:event_btnAddBook3ActionPerformed
+
+    private void btnAddBook4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddBook4MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddBook4MouseEntered
+
+    private void btnAddBook4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddBook4MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddBook4MouseExited
+
+    private void btnAddBook4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddBook4ActionPerformed
+        // TODO add your handling code here:
+        textFieldPdf.setText("");
+    }//GEN-LAST:event_btnAddBook4ActionPerformed
+
+    private void btnAddBook5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddBook5MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddBook5MouseEntered
+
+    private void btnAddBook5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddBook5MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddBook5MouseExited
+
+    private void btnAddBook5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddBook5ActionPerformed
+        // TODO add your handling code here:
+        textFieldAudio.setText("");
+    }//GEN-LAST:event_btnAddBook5ActionPerformed
+
+    private void btnAddBook6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddBook6MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddBook6MouseEntered
+
+    private void btnAddBook6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddBook6MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddBook6MouseExited
+
+    private void btnAddBook6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddBook6ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f = chooser.getSelectedFile();
+        if (f!=null){
+            String path = f.getAbsolutePath();
+            textFieldAudio.setText(path);
+        }
+    }//GEN-LAST:event_btnAddBook6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -488,18 +722,26 @@ public class Frame20_AddBook extends javax.swing.JFrame {
     private javax.swing.JButton btnAddBook;
     private javax.swing.JButton btnAddBook1;
     private javax.swing.JButton btnAddBook2;
+    private javax.swing.JButton btnAddBook3;
+    private javax.swing.JButton btnAddBook4;
+    private javax.swing.JButton btnAddBook5;
+    private javax.swing.JButton btnAddBook6;
     private javax.swing.JButton btnCancel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField textFieldAudio;
     private javax.swing.JTextField textFieldAuthor;
     private javax.swing.JTextField textFieldCategory;
     private javax.swing.JTextField textFieldId;
     private javax.swing.JLabel textFieldImage;
+    private javax.swing.JTextField textFieldPdf;
     private javax.swing.JTextField textFieldTitle;
     // End of variables declaration//GEN-END:variables
 }
