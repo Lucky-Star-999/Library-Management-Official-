@@ -10,6 +10,7 @@ User.class
 Frame15_EditProfileStudent$12.class
 ManageData.class
 Frame10_ManageStudents_General$8.class
+Frame16_Book_Manager$21.class
 Frame7_ProfileStudent$14.class
 Frame7_ProfileStudent$4.class
 Frame16_Book_Manager.class
@@ -37,6 +38,7 @@ Frame16_Book_Manager$2.class
 Frame12_ChangeFine$4.class
 Frame11_ManageStudents_Detail$3.class
 Frame17_PasswordChangeStudent$6.class
+Frame16_Book_Manager$20.class
 Frame20_AddBook$2.class
 Frame10_ManageStudents_General$11.class
 Frame17_PasswordChangeStudent$2.class

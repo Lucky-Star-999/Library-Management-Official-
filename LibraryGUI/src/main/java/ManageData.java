@@ -432,4 +432,14 @@ public class ManageData {
             this.allStudent.get(key).setFine(fine);
         }
     }
+    
+    
+    public void openPdfFile(String path){
+        try{
+            Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " + path);
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "This file is not supported by the system");
+        }
+    }
 }

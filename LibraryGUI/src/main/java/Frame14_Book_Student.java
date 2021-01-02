@@ -135,7 +135,7 @@ public class Frame14_Book_Student extends javax.swing.JFrame {
         });
 
         btnUpcoming.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
-        btnUpcoming.setText("*Feature gì đó");
+        btnUpcoming.setText("Read pdf");
         btnUpcoming.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnUpcomingMouseEntered(evt);
@@ -244,10 +244,12 @@ public class Frame14_Book_Student extends javax.swing.JFrame {
                         .addGap(43, 43, 43)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnShowList)
+                                .addGap(110, 110, 110)
                                 .addComponent(btnUpcoming)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnShowList))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -399,6 +401,15 @@ public class Frame14_Book_Student extends javax.swing.JFrame {
 
     private void btnUpcomingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpcomingActionPerformed
         // TODO add your handling code here:
+        int i = jTable1.getSelectedRow();
+        if(i != -1){
+            String id = String.valueOf(jTable1.getValueAt(i, 0));
+            //ManageData.getManageData().setBook_choosen(id);
+            String link = ManageData.getManageData().allBook.get(id).getLinkPdf();
+            File file = new File(link);
+            ManageData.getManageData().openPdfFile(file.getAbsolutePath());
+
+        }
     }//GEN-LAST:event_btnUpcomingActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed

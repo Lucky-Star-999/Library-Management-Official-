@@ -101,6 +101,7 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
         btnAddNewBook1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btnAddNewBook2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -265,6 +266,22 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        btnAddNewBook2.setFont(new java.awt.Font("Avenir Next", 1, 18)); // NOI18N
+        btnAddNewBook2.setText("Read pdf");
+        btnAddNewBook2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAddNewBook2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAddNewBook2MouseExited(evt);
+            }
+        });
+        btnAddNewBook2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddNewBook2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -283,12 +300,6 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
                             .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE))
                         .addGap(41, 41, 41)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnShowList, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnAddNewBook)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnAddNewBook1))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
@@ -300,8 +311,17 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextField_Search, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jScrollPane1))))
-                .addContainerGap(100, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnShowList, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnAddNewBook)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnAddNewBook1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnAddNewBook2)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addGap(76, 76, 76))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -331,7 +351,8 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
                     .addComponent(btnAddNewBook, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnShowList, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAddNewBook1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAddNewBook1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAddNewBook2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
@@ -595,6 +616,27 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void btnAddNewBook2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddNewBook2MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddNewBook2MouseEntered
+
+    private void btnAddNewBook2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddNewBook2MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddNewBook2MouseExited
+
+    private void btnAddNewBook2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNewBook2ActionPerformed
+        // TODO add your handling code here:
+        int i = jTable1.getSelectedRow();
+        if(i != -1){
+            String id = String.valueOf(jTable1.getValueAt(i, 0));
+            //ManageData.getManageData().setBook_choosen(id);
+            String link = ManageData.getManageData().allBook.get(id).getLinkPdf();
+            File file = new File(link);
+            ManageData.getManageData().openPdfFile(file.getAbsolutePath());
+
+        }
+    }//GEN-LAST:event_btnAddNewBook2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -633,6 +675,7 @@ public class Frame16_Book_Manager extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddNewBook;
     private javax.swing.JButton btnAddNewBook1;
+    private javax.swing.JButton btnAddNewBook2;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSearch;
